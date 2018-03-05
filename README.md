@@ -76,7 +76,9 @@ No extra patches
 
 
 
-
+-------------------------------------------------------------------------------
+Notes:
+-------------------------------------------------------------------------------
 File lists:
 build logs\shim_build_ia32.log							(log file for building 32Bit SHIM file)
 build logs\shim_build_x64.log							(log file for building 64Bit SHIM file)
