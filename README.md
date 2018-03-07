@@ -28,9 +28,9 @@ Who is the primary contact for security updates, etc.
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
-- Name: Hao Binnan
+- Name: Liu jia
 - Position: Managing Director
-- Email address: haobinnan@gmail.com
+- Email address: liusirjiayou@126.com
 
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
