@@ -24,6 +24,7 @@ Who is the primary contact for security updates, etc.
 - Name: Hao Binnan
 - Position: Managing Director
 - Email address: haobinnan@gmail.com
+- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community: 79AFC78F
 
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
@@ -31,6 +32,7 @@ Who is the secondary contact for security updates, etc.
 - Name: Liu jia
 - Position: Managing Director
 - Email address: liusirjiayou@126.com
+- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the linux community: CD97FA99
 
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
