@@ -35,12 +35,12 @@ Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
 -------------------------------------------------------------------------------
-https://github.com/rhboot/shim/tree/14
+14
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-https://github.com/haobinnan/shim-review
+https://github.com/rhboot/shim
 
 -------------------------------------------------------------------------------
 What patches are being applied and why:
