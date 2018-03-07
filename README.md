@@ -35,7 +35,7 @@ Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
 -------------------------------------------------------------------------------
-14
+shim tag:14
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
