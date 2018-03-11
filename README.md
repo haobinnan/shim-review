@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 What organization or people are asking to have this signed:
 -------------------------------------------------------------------------------
-- 秦皇岛易之数软件开发有限公司(Isoo (Qinhuangdao) software development Co., Ltd.)
+- 秦皇岛易之数软件开发有限公司 (Isoo (Qinhuangdao) software development Co., Ltd.)
 - Qinhuangdao, Hebei, China
 - Isoo is a software developer for data recovery, disk utilities and system backup.
 - Managing Director: Hao Binnan
