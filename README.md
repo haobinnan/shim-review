@@ -1,8 +1,7 @@
 -------------------------------------------------------------------------------
 What organization or people are asking to have this signed:
 -------------------------------------------------------------------------------
-- 秦皇岛易之数软件开发有限公司
-- Isoo (Qinhuangdao) software development Co., Ltd.
+- 秦皇岛易之数软件开发有限公司(Isoo (Qinhuangdao) software development Co., Ltd.)
 - Qinhuangdao, Hebei, China
 - Isoo is a software developer for data recovery, disk utilities and system backup.
 - Managing Director: Hao Binnan
@@ -16,7 +15,7 @@ What product or service is this for:
 What's the justification that this really does need to be signed for the whole world to be able to boot it:
 -------------------------------------------------------------------------------
 - Isoo wants to employ Secure Boot for building a trusted operating system from Shim to GRUB to the kernel to signed filesystem partitions. Secure Boot is the first step for this.
-- Isoo would like customers to be able to run Isoo’s Linux-based system on any amd64(64Bit) annd X86(32Bit) device without disabling Secure Boot.
+- Isoo would like customers to be able to run Isoo’s Linux-based system on any amd64(64Bit) and x86(32Bit) device without disabling Secure Boot.
 
 -------------------------------------------------------------------------------
 Who is the primary contact for security updates, etc.
@@ -63,8 +62,8 @@ What OS and toolchain must we use to reproduce this build?  Include where to fin
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-- build "logs/shim_build_ia32.log"
-- build "logs/shim_build_x64.log"
+- "build logs/shim_build_ia32.log"
+- "build logs/shim_build_x64.log"
 
 -------------------------------------------------------------------------------
 Put info about what bootloader you're using, including which patches it includes to enforce Secure Boot here:
