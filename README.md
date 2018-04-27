@@ -81,21 +81,33 @@ Put info about what kernel you're using, including which patches it includes to 
 Notes:
 -------------------------------------------------------------------------------
 - File lists:
-- code\SecureBootPatches                                 (Linux Kernel Secure Boot Patches)
-- code\15.tar.gz                                         (SHIM source code)
-- code\gnu-efi-3.0.8.tar.bz2                             (gnu-efi source code)
-- code\grub-2.02+dfsg1-4.tar.bz2                         (Grub2 source code)
-- grub2\                                                 (This path is the Grub2 file to be used in the final release [including 32bit and 64bit])
-- LinuxKernel\                                           (This path is the Linux Kernel file to be used in the final release [including 32bit and 64 bit])
-- shim\cab-signed\shimia32_v15_20180425.cab              (32Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
-- shim\cab-signed\shimx64_v15_20180425.cab               (64Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
-- shim\shimia32.efi                                      (32Bit SHIM binary to be signed)
-- shim\shimx64.efi                                       (64Bit SHIM binary to be signed)
-- shim\shimia32.efi.sha256sum                            (shimia32.efi sha256sum)
-- shim\shimx64.efi.sha256sum                             (shimx64.efi sha256sum)
-- shim build logs\shim_build_ia32.log                    (log file for building 32Bit SHIM file)
-- shim build logs\shim_build_x64.log                     (log file for building 64Bit SHIM file)
-- Isoo.cer                                               (Certificate embedded in SHIM)
-- mk-install-gnu-efi.sh                                  (gnu-efi installation script)
-- mk-shim.sh                                             (SHIM building script)
-
+```text
+├── code
+│   ├── 15.tar.gz                      (SHIM source code)
+│   ├── gnu-efi-3.0.8.tar.bz2          (gnu-efi source code)
+│   ├── grub-2.02+dfsg1-4.tar.bz2      (Grub2 source code)
+│   └── SecureBootPatches              (Linux Kernel Secure Boot Patches)
+├── grub2                              (This path is the Grub2 file to be used in the final release [including 32bit and 64bit])
+│   ├── grubia32.efi
+│   └── grubx64.efi
+├── Isoo.cer                           (Certificate embedded in SHIM)
+├── LinuxKernel                        (This path is the Linux Kernel file to be used in the final release [including 32bit and 64bit])
+│   ├── x86
+│   │   └── bzImage
+│   └── x86_64
+│       └── bzImage
+├── mk-install-gnu-efi.sh              (gnu-efi installation script)
+├── mk-shim.sh                         (SHIM building script)
+├── README.md
+├── shim
+│   ├── cab-signed
+│   │   ├── shimia32_v15_20180425.cab  (32Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
+│   │   └── shimx64_v15_20180425.cab   (64Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
+│   ├── shimia32.efi                   (32Bit SHIM binary to be signed)
+│   ├── shimia32.efi.sha256sum         (shimia32.efi sha256sum)
+│   ├── shimx64.efi                    (64Bit SHIM binary to be signed)
+│   └── shimx64.efi.sha256sum          (shimx64.efi sha256sum)
+└── shim build logs
+    ├── shim_build_ia32.log            (log file for building 32bit SHIM file)
+    └── shim_build_x64.log             (log file for building 64bit SHIM file)
+```
