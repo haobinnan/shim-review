@@ -75,7 +75,7 @@ Put info about what bootloader you're using, including which patches it includes
 Put info about what kernel you're using, including which patches it includes to enforce Secure Boot here:
 -------------------------------------------------------------------------------
 - https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.14.35.tar.xz
-- code\SecureBootPatches
+- code/SecureBootPatches
 
 -------------------------------------------------------------------------------
 Notes:
