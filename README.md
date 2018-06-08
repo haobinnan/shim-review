@@ -52,7 +52,7 @@ What patches are being applied and why:
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 -------------------------------------------------------------------------------
 - OS: 
-- Ubuntu 18.04 LTS
+- Ubuntu 18.04 LTS (amd64) ---------- Download:http://releases.ubuntu.com/18.04/ubuntu-18.04-desktop-amd64.iso
 
 - Toolchain: 
 - binutils/bionic,now 2.30-15ubuntu1
@@ -82,6 +82,11 @@ Notes:
 -------------------------------------------------------------------------------
 - File lists:
 ```text
+├── Isoo.cer                           (Certificate embedded in SHIM)
+├── BuildDeployment.sh                 (The libraries and tools needed to install the build)
+├── mk-install-gnu-efi.sh              (gnu-efi installation script)
+├── mk-shim.sh                         (SHIM building script)
+├── README.md
 ├── code
 │   ├── 15.tar.gz                      (SHIM source code)
 │   ├── gnu-efi-3.0.8.tar.bz2          (gnu-efi source code)
@@ -90,15 +95,11 @@ Notes:
 ├── grub2                              (This path is the Grub2 file to be used in the final release [including 32bit and 64bit])
 │   ├── grubia32.efi
 │   └── grubx64.efi
-├── Isoo.cer                           (Certificate embedded in SHIM)
 ├── LinuxKernel                        (This path is the Linux Kernel file to be used in the final release [including 32bit and 64bit])
 │   ├── x86
 │   │   └── bzImage
 │   └── x86_64
 │       └── bzImage
-├── mk-install-gnu-efi.sh              (gnu-efi installation script)
-├── mk-shim.sh                         (SHIM building script)
-├── README.md
 ├── shim
 │   ├── cab-signed
 │   │   ├── shimia32_v15_20180425.cab  (32Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
