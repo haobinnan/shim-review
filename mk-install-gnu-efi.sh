@@ -1,23 +1,28 @@
 #!/usr/bin/env bash
 
-#function
+if [ $(getconf LONG_BIT) != '64' ]; then
+    echo "GNU-EFI Lib Only supports compiling on 64-Bit systems ."
+    exit 1
+fi
+
+#Clean
 function clean_gnuefi()
 {
     sudo rm -rf /usr/include/efi
     sudo rm -rf /usr/lib/gnuefi
     sudo rm -rf /usr/lib64/gnuefi
 }
-#function
 
 if test $1 && [ $1 = "clean" ]; then
     clean_gnuefi
     echo "clean ok!"
     exit
 fi
+#Clean
 
 Make="make -j$(cat /proc/cpuinfo | grep "cpu cores" | wc -l)"
 
-AtomLinux_GnuEFIVNumber="3.0.8"
+AtomLinux_GnuEFIVNumber="3.0.9"
 AtomLinux_DownloadURL="https://jaist.dl.sourceforge.net/project/gnu-efi/"
 
 OBJ_PROJECT=gnu-efi

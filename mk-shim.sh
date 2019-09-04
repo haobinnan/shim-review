@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ $(getconf LONG_BIT) != '64' ]; then
+    echo "SHIM Only supports compiling on 64-Bit systems ."
+    exit 1
+fi
+
 Make="make -j$(cat /proc/cpuinfo | grep "cpu cores" | wc -l)"
 
 AtomLinux_ShimVNumber="15"
@@ -9,15 +14,31 @@ AtomLinux_DownloadURL="https://github.com/rhboot/shim/archive/"
 UseExistingCertificate=yes
 #Use Existing Certificate  (yes | no)
 
+OBJ_PROJECT=shim
+FILENAME=${AtomLinux_ShimVNumber}.tar.gz
+
+#Clean
+function clean_shim()
+{
+    rm -f ./*.log
+    rm -rf ./shim_result
+
+    rm -rf ${OBJ_PROJECT}-tmp
+}
+
+if test $1 && [ $1 = "clean" ]; then
+    clean_shim
+    echo "shim clean ok!"
+    exit
+fi
+#Clean
+
 if [ $UseExistingCertificate = "yes" ]; then
     if [ ! -f ./Isoo.cer ]; then
         echo "Error: VendorCertfile does not exist ."
         exit 1
     fi
 fi
-
-OBJ_PROJECT=shim
-FILENAME=${AtomLinux_ShimVNumber}.tar.gz
 
 #Download Source Code
 if [ ! -f ./${FILENAME} ]; then
@@ -40,7 +61,7 @@ if [ ! -f ./${FILENAME} ]; then
 fi
 #Download Source Code
 
-rm -rf ./${OBJ_PROJECT}_result
+clean_shim
 mkdir ${OBJ_PROJECT}_result
 
 #function
@@ -60,6 +81,22 @@ function build()
     #Check Decompression
 
     cd ./${OBJ_PROJECT}-tmp/${OBJ_PROJECT}-${AtomLinux_ShimVNumber}
+
+    #Patches
+    if [ -d ../../code/shim-patches ]; then
+        for file in $(ls ../../code/shim-patches);
+        do
+            echo -e "\033[31m$file\033[0m"
+            patch -p1 < ../../code/shim-patches/$file
+            #Check patch
+            if [ ! $? -eq 0 ]; then
+                echo "Error: patch (shim) ."
+                exit 1
+            fi
+            #Check patch
+        done
+    fi
+    #Patches
 
     if [ $UseExistingCertificate = "yes" ]; then
         echo | $Make ARCH=$ARCH VENDOR_CERT_FILE=../../Isoo.cer 2>&1 | tee ../../shim_build_${NAME}.log

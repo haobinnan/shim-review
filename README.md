@@ -46,18 +46,18 @@ URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-- No patches have been applied
+- "code/shim-patches/"
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 -------------------------------------------------------------------------------
 - OS: 
-- Ubuntu 18.04 LTS (amd64) ---------- Download:http://releases.ubuntu.com/18.04/ubuntu-18.04-desktop-amd64.iso
+- Ubuntu 18.04.3 LTS (amd64) ---------- Download:http://releases.ubuntu.com/18.04/ubuntu-18.04.3-desktop-amd64.iso
 
 - Toolchain: 
-- binutils/bionic,now 2.30-15ubuntu1
-- gnu-efi 3.0.8
-- gcc version 7.3.0 (Ubuntu 7.3.0-16ubuntu3)
+- binutils/bionic-updates,bionic-security,now 2.30-21ubuntu1~18.04.2 amd64
+- gnu-efi 3.0.9
+- gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1)
 
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
@@ -68,18 +68,19 @@ Which files in this repo are the logs for your build?   This should include logs
 -------------------------------------------------------------------------------
 Put info about what bootloader you're using, including which patches it includes to enforce Secure Boot here:
 -------------------------------------------------------------------------------
-- https://salsa.debian.org/grub-team/grub/tree/debian/2.02+dfsg1-4
+- https://salsa.debian.org/grub-team/grub/tree/debian/2.02+dfsg1-20
 - No extra patches
 
 -------------------------------------------------------------------------------
 Put info about what kernel you're using, including which patches it includes to enforce Secure Boot here:
 -------------------------------------------------------------------------------
-- https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.14.35.tar.xz
-- patches: https://github.com/haobinnan/shim-review/tree/master/code/SecureBootPatches
+- https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.2.11.tar.xz
+- patches: https://github.com/haobinnan/LinuxKernelSecureBootPatch/tree/master/5.2_sb
 
 -------------------------------------------------------------------------------
-Notes:
+Add any additional information you think we may need to validate this shim
 -------------------------------------------------------------------------------
+Notes:
 - File lists:
 ```text
 ├── Isoo.cer                           (Certificate embedded in SHIM)
@@ -89,9 +90,10 @@ Notes:
 ├── README.md
 ├── code
 │   ├── 15.tar.gz                      (SHIM source code)
-│   ├── gnu-efi-3.0.8.tar.bz2          (gnu-efi source code)
-│   ├── grub-2.02+dfsg1-4.tar.bz2      (Grub2 source code)
-│   └── SecureBootPatches              (Linux Kernel Secure Boot Patches)
+│   ├── gnu-efi-3.0.9.tar.bz2          (gnu-efi source code)
+│   ├── grub-2.02+dfsg1-20.tar.bz2     (Grub2 source code)
+│   ├── shim-patches                   (shim Patches)
+│   └── linuxkernel-SecureBootPatches  (Linux Kernel Secure Boot Patches)
 ├── grub2                              (This path is the Grub2 file to be used in the final release [including 32bit and 64bit])
 │   ├── grubia32.efi
 │   └── grubx64.efi
@@ -102,8 +104,8 @@ Notes:
 │       └── bzImage
 ├── shim
 │   ├── cab-signed
-│   │   ├── shimia32_v15_20180425.cab  (32Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
-│   │   └── shimx64_v15_20180425.cab   (64Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
+│   │   ├── shimia32_v15_20190904.cab  (32Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
+│   │   └── shimx64_v15_20190904.cab   (64Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
 │   ├── shimia32.efi                   (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum         (shimia32.efi sha256sum)
 │   ├── shimx64.efi                    (64Bit SHIM binary to be signed)

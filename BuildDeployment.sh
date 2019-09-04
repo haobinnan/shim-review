@@ -10,8 +10,10 @@ AtomLinux_Only64Bit="No"
 echo "Do you want to execute apt update and apt dist-upgrade? [y/n]"
 read answer
 if [ $answer = "y" ] || [ $answer = "Y" ]; then
-    if [ $(getconf LONG_BIT) = '64' ]; then
-        sudo dpkg --add-architecture i386
+    if [ ${AtomLinux_Only64Bit} != "Yes" ]; then
+        if [ $(getconf LONG_BIT) = '64' ]; then
+            sudo dpkg --add-architecture i386
+        fi
     fi
 
     sudo apt update
@@ -25,100 +27,114 @@ if [ $answer = "y" ] || [ $answer = "Y" ]; then
 fi
 #apt update
 
-#tools
-echo y | sudo apt install wget vim git git-gui sbsigntool lcab
-#tools
-
-echo y | sudo apt install build-essential module-assistant gcc-multilib g++-multilib libtool
-
-echo y | sudo apt install libncurses5-dev zlib1g-dev libpng-dev libjpeg-dev libpcre3 libpcre3-dev libnss3-tools pesign
-if [ ${AtomLinux_Only64Bit} != "Yes" ]; then
-    if [ $(getconf LONG_BIT) = '64' ]; then
-        echo y | sudo apt install libncurses5-dev:i386 zlib1g-dev:i386 libpng-dev:i386 libjpeg-dev:i386 libpcre3-dev:i386
+#function
+function MyInstall_Base()
+{
+    echo y | sudo apt install $1
+    #Check
+    if [ ! $? -eq 0 ]; then
+        echo "Error: apt install ."
+        exit 1
     fi
-fi
+    #Check
+}
+
+function MyInstall()
+{
+    INSTALL=$1
+    if [ ${AtomLinux_Only64Bit} != "Yes" ]; then
+        if [ $(getconf LONG_BIT) = '64' ]; then
+            INSTALL=${INSTALL// /:i386 }:i386
+        fi
+    fi
+    MyInstall_Base "${INSTALL}"
+}
+#function
+
+#tools
+MyInstall_Base "wget vim git git-gui sbsigntool lcab python perl ruby flex bison cmake gperf pesign automake nasm autogen m4 autoconf meson help2man xorriso texinfo gettext upx-ucl irpas"
+#tools
+
+MyInstall_Base "build-essential module-assistant gcc-multilib g++-multilib libtool libnss3-tools libpcre3"
+
+MyInstall "libncurses5-dev zlib1g-dev libpng-dev libjpeg-dev libpcre3-dev"
 
 #libssl
-sudo apt list libssl1.0-dev | grep libssl1.0-dev -q
+apt list libssl1.0-dev | egrep 'libssl1.0-dev'
 if [ ! $? -eq 0 ]; then
-    echo y | sudo apt install libssl1.0-dev
-    if [ ${AtomLinux_Only64Bit} != "Yes" ]; then
-        if [ $(getconf LONG_BIT) = '64' ]; then
-            echo y | sudo apt install libssl1.0-dev:i386
-        fi
-    fi
+    MyInstall "libssl-dev"
 else
-    echo y | sudo apt install libssl-dev
-    if [ ${AtomLinux_Only64Bit} != "Yes" ]; then
-        if [ $(getconf LONG_BIT) = '64' ]; then
-            echo y | sudo apt install libssl-dev:i386
-        fi
-    fi
+    MyInstall "libssl1.0-dev"
 fi
 #libssl
 
 #What you need to build 'LinuxKernel'
-echo y | sudo apt install libelf-dev
+MyInstall_Base "libelf-dev"
 if [ ${AtomLinux_Only64Bit} != "Yes" ]; then
     if [ $(getconf LONG_BIT) = '64' ]; then
-        echo y | sudo apt install libelf-dev:i386
+        MyInstall_Base "libelf-dev:i386"
     fi
 fi
 #What you need to build 'LinuxKernel'
 
 #What you need to build 'Qt4 x11 version'
-echo y | sudo apt install libx11-dev libxext-dev libxtst-dev libfontconfig1-dev
-if [ ${AtomLinux_Only64Bit} != "Yes" ]; then
-    if [ $(getconf LONG_BIT) = '64' ]; then
-        echo y | sudo apt install libx11-dev:i386 libxext-dev:i386 libxtst-dev:i386 libfontconfig1-dev:i386
-    fi
-fi
+MyInstall "libx11-dev libxext-dev libxtst-dev libfontconfig1-dev"
 #What you need to build 'Qt4 x11 version'
 
 #What you need to build 'Qt5'
-echo y | sudo apt install libxcb1 libxcb1-dev libx11-xcb1 libx11-xcb-dev libxcb-keysyms1 libxcb-keysyms1-dev libxcb-image0 libxcb-image0-dev libxcb-shm0 libxcb-shm0-dev libxcb-icccm4 libxcb-icccm4-dev libxcb-sync0-dev libxcb-xfixes0-dev libxrender-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-render-util0 libxcb-render-util0-dev libxcb-glx0-dev libxcb-xinerama0 libxcb-xinerama0-dev
-echo y | sudo apt install qt5-default
-if [ ${AtomLinux_Only64Bit} != "Yes" ]; then
-    if [ $(getconf LONG_BIT) = '64' ]; then
-        echo y | sudo apt install libxcb1-dev:i386 libx11-xcb-dev:i386 libxcb-keysyms1-dev:i386 libxcb-image0-dev:i386 libxcb-shm0-dev:i386 libxcb-icccm4-dev:i386 libxcb-sync0-dev:i386 libxcb-xfixes0-dev:i386 libxrender-dev:i386 libxcb-shape0-dev:i386 libxcb-randr0-dev:i386 libxcb-render-util0-dev:i386 libxcb-glx0-dev:i386 libxcb-xinerama0-dev:i386
-        echo y | sudo apt install libxkbcommon-dev:i386 libmircommon-dev:i386 libmirclient-dev:i386 libegl1-mesa-dev:i386 libgles2-mesa-dev:i386 qtbase5-dev:i386
-    fi
-fi
+# Libxcb
+MyInstall "^libxcb.*-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev"
+# Libxcb
+
+# Qt WebKit
+MyInstall "libicu-dev libxslt1-dev"
+# Qt WebKit
+
+# Qt WebEngine	
+MyInstall "libxcursor-dev libxcomposite-dev libxdamage-dev libxrandr-dev libdbus-1-dev libfontconfig1-dev libcap-dev libxtst-dev libpulse-dev libudev-dev libpci-dev libnspr4-dev libnss3-dev libasound2-dev libxss-dev libegl1-mesa-dev"
+MyInstall "libbz2-dev libgcrypt11-dev libdrm-dev libcupsimage2-dev libtiff-dev libcups2-dev libatkmm-1.6-dev"
+# Qt WebEngine
 #What you need to build 'Qt5'
 
 #What you need to build 'grub2'
-echo y | sudo apt install bison libopts25 libselinux1-dev autogen m4 autoconf help2man libopts25-dev flex libfont-freetype-perl automake autotools-dev libfreetype6-dev texinfo libdevmapper-dev libpciaccess-dev xorriso
+MyInstall_Base "libopts25 libfont-freetype-perl libopts25-dev libselinux1-dev autotools-dev libfreetype6-dev libdevmapper-dev libpciaccess-dev librpm-dev"
 #What you need to build 'grub2'
 
-#What you need to build 'shim'
-#   echo y | sudo apt install gnu-efi
-#   echo y | sudo apt install gnu-efi:i386
-#What you need to build 'shim'
+#What you need to build 'weston'
+MyInstall_Base "wayland-protocols"
 
-#Install Qt Creator
-echo y | sudo apt install qtcreator
-#Install Qt Creator
+MyInstall "libgles2-mesa-dev libxcb-composite0-dev libxcursor-dev libcairo2-dev libgbm-dev libpam0g-dev"
+MyInstall "libinput-dev libxkbcommon-dev libxml2-dev"
+#What you need to build 'weston'
 
-#cmake
-echo y | sudo apt install cmake
-#cmake
+#What you need to build 'dislocker'
+MyInstall "libfuse-dev libmbedtls-dev ruby-dev"
+#What you need to build 'dislocker'
 
-#What you need to build 'glib'
-echo y | sudo apt install libffi-dev libfam-dev libmount-dev gettext
+#What you need to build 'OVMF'
+MyInstall_Base "acpica-tools"
+
+MyInstall_Base "libmount-dev"
 if [ ${AtomLinux_Only64Bit} != "Yes" ]; then
     if [ $(getconf LONG_BIT) = '64' ]; then
-        echo y | sudo apt install libffi-dev:i386 libfam-dev:i386 libmount-dev:i386
+        MyInstall_Base "libmount-dev:i386"
     fi
 fi
+#What you need to build 'OVMF'
+
+#Install Qt Creator
+MyInstall_Base "qtcreator"
+#Install Qt Creator
+
+#What you need to build 'glib'
+MyInstall "libffi-dev libfam-dev libmount-dev"
 #What you need to build 'glib'
 
 #Install qemu
-echo y | sudo apt install qemu ovmf
+MyInstall_Base "qemu"
 #Install qemu
 
-#Install upx
-echo y | sudo apt install upx-ucl
-#Install upx
+echo y | sudo apt autoremove
 
 ./mk-install-gnu-efi.sh
 
