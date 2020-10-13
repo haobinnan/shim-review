@@ -36,7 +36,7 @@ Who is the secondary contact for security updates, etc.
 -------------------------------------------------------------------------------
 What upstream shim tag is this starting from:
 -------------------------------------------------------------------------------
-- shim tag:15
+- shim branches:15.2 (https://github.com/rhboot/shim/tree/74b05de7d19fa4f462b6e228a8a03f8ee242b673)
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
@@ -46,36 +46,61 @@ URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-- "code/shim-patches/"
+- No patches have been applied
+
+-------------------------------------------------------------------------------
+If bootloader, shim loading is, grub2: is CVE-2020-10713 fixed ?
+-------------------------------------------------------------------------------
+- Yes
+
+-------------------------------------------------------------------------------
+If bootloader, shim loading is, grub2, and previous shims were trusting affected
+by CVE-2020-10713 grub2:
+* were old shims hashes provided to Microsoft for verification
+  and to be added to future DBX update ?
+* Does your new chain of trust disallow booting old, affected by CVE-2020-10713,
+  grub2 builds ?
+-------------------------------------------------------------------------------
+- No
+- Yes it uses mechanism that disallow to boot not signed grub binaries.
+
+-------------------------------------------------------------------------------
+If your boot chain of trust includes linux kernel, is
+"efi: Restrict efivar_ssdt_load when the kernel is locked down"
+upstream commit 1957a85b0032a81e6482ca4aab883643b8dae06e applied ?
+Is "ACPI: configfs: Disallow loading ACPI tables when locked down"
+upstream commit 75b0cea7bf307f362057cc778efe89af4c615354 applied ?
+-------------------------------------------------------------------------------
+- Yes. CVE-2020-15780 and CVE-2019-20908 fixed by these commits
+
+-------------------------------------------------------------------------------
+If you use vendor_db functionality of providing multiple certificates and/or
+hashes please briefly describe your certificate setup. If there are whitelisted hashes
+please provide exact binaries for which hashes are created via file sharing service,
+available in public with anonymous access for verification
+-------------------------------------------------------------------------------
+- My certificate is stored in a db created by pesign, which is stored on a separate computer that is only used for signing and only few trusted administrators can access it. Linux kernel, grubia32.efi and grubx64.efi are signed using this certificate.
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
+If possible, provide a Dockerfile that rebuilds the shim.
 -------------------------------------------------------------------------------
 - OS: 
-- Ubuntu 18.04.3 LTS (amd64) ---------- Download:http://releases.ubuntu.com/18.04/ubuntu-18.04.3-desktop-amd64.iso
+- Ubuntu 20.04.1 LTS (amd64)
 
 - Toolchain: 
-- binutils/bionic-updates,bionic-security,now 2.30-21ubuntu1~18.04.2 amd64
-- gnu-efi 3.0.9
-- gcc version 7.4.0 (Ubuntu 7.4.0-1ubuntu1~18.04.1)
+- binutils/focal,now 2.34-6ubuntu1 amd64
+- gnu-efi 3.0.12 (URL:https://sourceforge.net/projects/gnu-efi/     |     Download URL:https://nchc.dl.sourceforge.net/project/gnu-efi/gnu-efi-3.0.12.tar.bz2)
+- gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04)
+
+- mk-install-gnu-efi.sh              (gnu-efi installation script)
+- mk-shim.sh                         (SHIM building script)
 
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-- "shim build logs/shim_build_ia32.log"
-- "shim build logs/shim_build_x64.log"
-
--------------------------------------------------------------------------------
-Put info about what bootloader you're using, including which patches it includes to enforce Secure Boot here:
--------------------------------------------------------------------------------
-- https://salsa.debian.org/grub-team/grub/tree/debian/2.02+dfsg1-20
-- No extra patches
-
--------------------------------------------------------------------------------
-Put info about what kernel you're using, including which patches it includes to enforce Secure Boot here:
--------------------------------------------------------------------------------
-- https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.2.11.tar.xz
-- patches: https://github.com/haobinnan/LinuxKernelSecureBootPatch/tree/master/5.2_sb
+- building 32bit SHIM file: shim build logs/shim_build_ia32.log
+- building 64bit SHIM file: shim build logs/shim_build_x64.log
 
 -------------------------------------------------------------------------------
 Add any additional information you think we may need to validate this shim
@@ -89,19 +114,7 @@ Notes:
 ├── mk-shim.sh                         (SHIM building script)
 ├── README.md
 ├── code
-│   ├── 15.tar.gz                      (SHIM source code)
-│   ├── gnu-efi-3.0.9.tar.bz2          (gnu-efi source code)
-│   ├── grub-2.02+dfsg1-20.tar.bz2     (Grub2 source code)
-│   ├── shim-patches                   (shim Patches)
 │   └── linuxkernel-SecureBootPatches  (Linux Kernel Secure Boot Patches)
-├── grub2                              (This path is the Grub2 file to be used in the final release [including 32bit and 64bit])
-│   ├── grubia32.efi
-│   └── grubx64.efi
-├── LinuxKernel                        (This path is the Linux Kernel file to be used in the final release [including 32bit and 64bit])
-│   ├── x86
-│   │   └── bzImage
-│   └── x86_64
-│       └── bzImage
 ├── shim
 │   ├── cab-signed
 │   │   ├── shimia32_v15_20190904.cab  (32Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)

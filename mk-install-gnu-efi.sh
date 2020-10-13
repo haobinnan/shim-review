@@ -22,7 +22,7 @@ fi
 
 Make="make -j$(cat /proc/cpuinfo | grep "cpu cores" | wc -l)"
 
-AtomLinux_GnuEFIVNumber="3.0.9"
+AtomLinux_GnuEFIVNumber="3.0.12"
 AtomLinux_DownloadURL="https://jaist.dl.sourceforge.net/project/gnu-efi/"
 
 OBJ_PROJECT=gnu-efi
