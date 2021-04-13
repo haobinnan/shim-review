@@ -7,7 +7,7 @@ fi
 
 Make="make -j$(cat /proc/cpuinfo | grep "cpu cores" | wc -l)"
 
-AtomLinux_ShimVNumber="15.2"
+AtomLinux_ShimVNumber="15.4"
 AtomLinux_DownloadURL="https://github.com/rhboot/shim.git"
 
 #Use Existing Certificate  (yes | no)
@@ -90,6 +90,11 @@ function build()
 
     cp -v ./*${NAME}.efi ../../${OBJ_PROJECT}_result/
     cp -v ./*${NAME}.efi.* ../../${OBJ_PROJECT}_result/
+
+    #sha256sum
+    SHA256SUM=$(sha256sum -b ./shim${NAME}.efi | awk '{print $1}')
+    echo ${SHA256SUM} > ../../${OBJ_PROJECT}_result/shim${NAME}.efi.sha256sum
+    #sha256sum
 
     #Copy Certificate
     if [ $UseExistingCertificate = "no" ]; then
