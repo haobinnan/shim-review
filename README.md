@@ -148,8 +148,8 @@ Notes:
 │   └── linuxkernel-SecureBootPatches   (Linux Kernel Secure Boot Patches)
 ├── shim
 │   ├── cab-signed
-│   │   ├── shimia32_v15.4_20210413.cab (32Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
-│   │   └── shimx64_v15.4_20210413.cab  (64Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
+│   │   ├── shimia32_v15.4_20210414.cab (32Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
+│   │   └── shimx64_v15.4_20210414.cab  (64Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)

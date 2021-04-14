@@ -76,6 +76,10 @@ function build()
         make clean
     fi
 
+    #sbat.csv
+    echo 'shim.isoo,1,The isoo linux project,shim,15.4,https://www.isoo.com/' > ./data/sbat.isoo.csv
+    #sbat.csv
+
     if [ $UseExistingCertificate = "yes" ]; then
         echo | $Make ARCH=$ARCH ENABLE_HTTBOOT=1 VENDOR_CERT_FILE=../../Isoo.cer 2>&1 | tee ../../shim_build_${NAME}.log
     else
