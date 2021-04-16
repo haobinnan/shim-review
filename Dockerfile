@@ -1,12 +1,12 @@
 FROM ubuntu:focal
-MAINTAINER binnan_hao haobinnan@gmail.com
+MAINTAINER binnan_hao<haobinnan@gmail.com>
 
 #update sources.list
 # COPY sources.list /etc/apt/sources.list
 #update sources.list
 
 RUN apt update -y && \
-    DEBIAN_FRONTEND=noninteractive apt install -y devscripts git-buildpackage software-properties-common dos2unix
+    DEBIAN_FRONTEND=noninteractive apt install -y devscripts dos2unix
 
 #set git proxy
 # RUN git config --global http.proxy http://192.168.1.66:10809
@@ -18,5 +18,5 @@ WORKDIR /work
 COPY mk-shim.sh .
 COPY Isoo.cer .
 
-RUN chmod +x mk-shim.sh
-RUN ./mk-shim.sh
+RUN chmod +x mk-shim.sh && \
+    ./mk-shim.sh
