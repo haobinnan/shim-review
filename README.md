@@ -141,7 +141,7 @@ Notes:
 - File lists:
 ```text
 ├── Isoo.cer                            (Certificate embedded in SHIM)
-├── BuildDeployment.sh                  (The libraries and tools needed to install the build)
+├── Dockerfile
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
 ├── code
