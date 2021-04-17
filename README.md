@@ -140,7 +140,7 @@ Add any additional information you think we may need to validate this shim
 Notes:
 - File lists:
 ```text
-├── Isoo.cer                            (Certificate embedded in SHIM)
+├── CertFile.cer                        (Certificate embedded in SHIM)
 ├── Dockerfile
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md

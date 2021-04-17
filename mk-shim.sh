@@ -33,7 +33,7 @@ fi
 #Clean
 
 if [ $UseExistingCertificate = "yes" ]; then
-    if [ ! -f ./Isoo.cer ]; then
+    if [ ! -f ./CertFile.cer ]; then
         echo "Error: VendorCertfile does not exist ."
         exit 1
     fi
@@ -81,7 +81,7 @@ function build()
     #sbat.csv
 
     if [ $UseExistingCertificate = "yes" ]; then
-        echo | $Make ARCH=$ARCH ENABLE_HTTBOOT=1 VENDOR_CERT_FILE=../../Isoo.cer 2>&1 | tee ../../shim_build_${NAME}.log
+        echo | $Make ARCH=$ARCH ENABLE_HTTBOOT=1 VENDOR_CERT_FILE=../../CertFile.cer 2>&1 | tee ../../shim_build_${NAME}.log
     else
         echo | $Make ARCH=$ARCH ENABLE_HTTBOOT=1 ENABLE_SHIM_CERT=1
     fi

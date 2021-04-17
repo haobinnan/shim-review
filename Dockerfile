@@ -16,7 +16,7 @@ RUN mkdir /work
 WORKDIR /work
 
 COPY mk-shim.sh .
-COPY Isoo.cer .
+COPY CertFile.cer .
 
 RUN chmod +x mk-shim.sh && \
     ./mk-shim.sh
