@@ -2,8 +2,7 @@
 What organization or people are asking to have this signed:
 -------------------------------------------------------------------------------
 - Qinhuangdao Yizhishu Software Development Co., Ltd.
-- Qinhuangdao, Hebei, China
-- Isoo is a software developer for data recovery, disk utilities and system backup.
+- Isoo is a software developer for data recovery, disk utilities and system backup. https://isoo.com/
 - Managing Director: Hao Binnan
 
 -------------------------------------------------------------------------------
@@ -118,15 +117,7 @@ apply. Please describe your strategy.
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 If possible, provide a Dockerfile that rebuilds the shim.
 -------------------------------------------------------------------------------
-- OS: 
-- Ubuntu 20.04.2 LTS (amd64)
-
-- Toolchain: 
-- binutils/focal-updates,focal-security,now 2.34-6ubuntu1.1 amd64
-- gnu-efi @ f0f9824 (it is included in shim 15.4)
-- gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04)
-
-- mk-shim.sh                         (SHIM building script)
+- Dockerfile to reproduce build is included.
 
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
@@ -144,12 +135,10 @@ Notes:
 ├── Dockerfile
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
-├── code
-│   └── linuxkernel-SecureBootPatches   (Linux Kernel Secure Boot Patches)
 ├── shim
-│   ├── cab-signed
-│   │   ├── shimia32_v15.4_20210414.cab (32Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
-│   │   └── shimx64_v15.4_20210414.cab  (64Bit SHIM file submitted to sysdev. The cab file has been signed by EV code signing)
+│   ├── cab
+│   │   ├── shimia32_v15.4_20210414.cab
+│   │   └── shimx64_v15.4_20210414.cab
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)
