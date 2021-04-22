@@ -143,7 +143,7 @@ Notes:
 │   ├── 0002-shim-15.4-branch-update-.gitmodules-to-point-at-shim.patch
 │   ├── 0003-Fix-a-broken-file-header-on-ia32.patch
 │   └── 0004-mok-allocate-MOK-config-table-as-BootServicesData.patch
-├── shim
+├── shim_orig
 │   ├── cab
 │   │   ├── shimia32_v15.4_20210414.cab
 │   │   └── shimx64_v15.4_20210414.cab
