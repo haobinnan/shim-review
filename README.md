@@ -49,7 +49,10 @@ URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-- No patches have been applied
+- 0001-Fix-handling-of-ignore_db-and-user_insecure_mode.patch
+- 0002-shim-15.4-branch-update-.gitmodules-to-point-at-shim.patch
+- 0003-Fix-a-broken-file-header-on-ia32.patch
+- 0004-mok-allocate-MOK-config-table-as-BootServicesData.patch
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
@@ -122,8 +125,8 @@ If possible, provide a Dockerfile that rebuilds the shim.
 -------------------------------------------------------------------------------
 Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 -------------------------------------------------------------------------------
-- building 32bit SHIM file: shim build logs/shim_build_ia32.log
-- building 64bit SHIM file: shim build logs/shim_build_x64.log
+- building 32bit SHIM file: logs/shim_build_ia32.log
+- building 64bit SHIM file: logs/shim_build_x64.log
 
 -------------------------------------------------------------------------------
 Add any additional information you think we may need to validate this shim
@@ -135,6 +138,11 @@ Notes:
 ├── Dockerfile
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
+├── Patches                             (SHIM Patches)
+│   ├── 0001-Fix-handling-of-ignore_db-and-user_insecure_mode.patch
+│   ├── 0002-shim-15.4-branch-update-.gitmodules-to-point-at-shim.patch
+│   ├── 0003-Fix-a-broken-file-header-on-ia32.patch
+│   └── 0004-mok-allocate-MOK-config-table-as-BootServicesData.patch
 ├── shim
 │   ├── cab
 │   │   ├── shimia32_v15.4_20210414.cab
@@ -143,7 +151,7 @@ Notes:
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)
 │   └── shimx64.efi.sha256sum           (shimx64.efi sha256sum)
-└── shim build logs
+└── logs
     ├── shim_build_ia32.log             (log file for building 32bit SHIM file)
     └── shim_build_x64.log              (log file for building 64bit SHIM file)
 ```

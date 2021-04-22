@@ -12,11 +12,12 @@ RUN apt update -y && \
 # RUN git config --global http.proxy http://192.168.1.66:10809
 #set git proxy
 
-RUN mkdir /work
+RUN mkdir -p /work/Patches
 WORKDIR /work
 
 COPY mk-shim.sh .
 COPY CertFile.cer .
+COPY Patches ./Patches/
 
 RUN chmod +x mk-shim.sh && \
     ./mk-shim.sh
