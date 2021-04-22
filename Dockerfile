@@ -12,12 +12,9 @@ RUN apt update -y && \
 # RUN git config --global http.proxy http://192.168.1.66:10809
 #set git proxy
 
-RUN mkdir -p /work/Patches
-WORKDIR /work
+RUN git clone --branch isoo-shim-20210422 https://github.com/haobinnan/shim-review.git
 
-COPY mk-shim.sh .
-COPY CertFile.cer .
-COPY Patches ./Patches/
+WORKDIR /shim-review
 
 RUN chmod +x mk-shim.sh && \
     ./mk-shim.sh
