@@ -95,7 +95,7 @@ function build()
     fi
 
     #sbat.csv
-    echo 'shim.isoo,1,The isoo linux project,shim,15.4,https://www.isoo.com/' > ./data/sbat.isoo.csv
+    echo 'shim.isoo,1,The isoo linux project,shim,'${AtomLinux_ShimVNumber}',https://www.isoo.com/' > ./data/sbat.isoo.csv
     #sbat.csv
 
     if [ $UseExistingCertificate = "yes" ]; then
@@ -145,6 +145,12 @@ build x86_64 x64 TRUE
 
 rm -rf ${OBJ_PROJECT}-tmp
 
+echo ""
+echo ""
+echo -e "\033[31m=================== sha256sum ===================\033[0m"
 sha256sum ${OBJ_PROJECT}_result/shim*.efi
+echo -e "\033[31m=================== sha256sum ===================\033[0m"
+echo ""
+echo ""
 
 echo "Complete."
