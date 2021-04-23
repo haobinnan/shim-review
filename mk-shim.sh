@@ -86,13 +86,10 @@ function build()
 {
     ARCH=$1
     NAME=$2
-    DEL=$3
 
     cd ./${OBJ_PROJECT}-tmp/${OBJ_PROJECT}
 
-    if [ ${DEL} = "TRUE" ]; then
-        make clean
-    fi
+    make clean
 
     #sbat.csv
     echo 'shim.isoo,1,The isoo linux project,shim,'${AtomLinux_ShimVNumber}',https://www.isoo.com/' > ./data/sbat.isoo.csv
@@ -134,13 +131,13 @@ function build()
 #function
 
 #x86
-build ia32 ia32 FALSE
+build ia32 ia32
 #x86
 
 echo "-------------------------------------------------------------"
 
 #x86_64
-build x86_64 x64 TRUE
+build x86_64 x64
 #x86_64
 
 rm -rf ${OBJ_PROJECT}-tmp
