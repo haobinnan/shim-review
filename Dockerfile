@@ -12,7 +12,7 @@ RUN apt update -y && \
 # RUN git config --global http.proxy http://192.168.1.66:10809
 #set git proxy
 
-RUN git clone --branch isoo-shim-20210422 https://github.com/haobinnan/shim-review.git
+RUN git clone --branch isoo-shim-20210423 https://github.com/haobinnan/shim-review.git
 
 WORKDIR /shim-review
 
