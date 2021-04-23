@@ -20,7 +20,7 @@ OBJ_PROJECT=shim
 function clean_shim()
 {
     rm -f ./*.log
-    rm -rf ./shim_result
+    rm -rf ./${OBJ_PROJECT}_result
 
     rm -rf ${OBJ_PROJECT}-tmp
 }
@@ -144,5 +144,7 @@ build x86_64 x64 TRUE
 #x86_64
 
 rm -rf ${OBJ_PROJECT}-tmp
+
+sha256sum ${OBJ_PROJECT}_result/shim*.efi
 
 echo "Complete."
