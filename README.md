@@ -49,10 +49,19 @@ URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-- 0001-Fix-handling-of-ignore_db-and-user_insecure_mode.patch
-- 0002-shim-15.4-branch-update-.gitmodules-to-point-at-shim.patch
-- 0003-Fix-a-broken-file-header-on-ia32.patch
-- 0004-mok-allocate-MOK-config-table-as-BootServicesData.patch
+- shim-15.4-branch-update-.gitmodules-to-point-at-shim.patch
+- Fix-a-broken-file-header-on-ia32.patch
+- 359.patch
+- 361.patch
+- 362.patch
+- 364.patch
+- ubuntu-no-addend-vendor-dbx.patch
+- 369.patch
+- 372.patch
+- 378.patch
+- 379.patch
+- 383.patch
+- 387.patch
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
@@ -118,7 +127,7 @@ apply. Please describe your strategy.
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
-If possible, provide a Dockerfile that rebuilds the shim.
+If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and the differences would be.
 -------------------------------------------------------------------------------
 - Dockerfile to reproduce build is included.
 
@@ -139,14 +148,8 @@ Notes:
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
 ├── Patches                             (SHIM Patches)
-│   ├── 0001-Fix-handling-of-ignore_db-and-user_insecure_mode.patch
-│   ├── 0002-shim-15.4-branch-update-.gitmodules-to-point-at-shim.patch
-│   ├── 0003-Fix-a-broken-file-header-on-ia32.patch
-│   └── 0004-mok-allocate-MOK-config-table-as-BootServicesData.patch
 ├── shim_orig
-│   ├── cab
-│   │   ├── shimia32_v15.4_20210414.cab
-│   │   └── shimx64_v15.4_20210414.cab
+│   ├── shim_v15.4_20210713.cab
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)

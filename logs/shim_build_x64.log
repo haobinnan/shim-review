@@ -571,17 +571,17 @@ make[1]: 离开目录“/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-
 ld -o shimx64.so --hash-style=sysv -nostdlib -znocombreloc -T /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/elf_x86_64_efi.lds -shared -Bsymbolic -Lgnu-efi/x86_64/gnuefi -Lgnu-efi/x86_64/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o --build-id=sha1  --no-undefined shim.o mok.o netboot.o cert.o replacements.o tpm.o version.o errlog.o sbat.o sbat_data.o pe.o httpboot.o csv.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/x86_64/lib/libefi.a gnu-efi/x86_64/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/9/libgcc.a lib/lib.a
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
-	-j .rela* -j .reloc -j .eh_frame \
+	-j .rela* -j .dyn -j .reloc -j .eh_frame \
 	-j .vendor_cert -j .sbat \
 	--target efi-app-x86_64 shimx64.so shimx64.efi
 # I am tired of wasting my time fighting binutils timestamp code.
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=shimx64.efi
 记录了4+0 的读入
 记录了4+0 的写出
-4字节已复制，9.5252e-05 s，42.0 kB/s
+4字节已复制，0.00014924 s，26.8 kB/s
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
-	-j .rela* -j .reloc -j .eh_frame -j .sbat \
+	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
 	-j .debug_info -j .debug_abbrev -j .debug_aranges \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
@@ -592,7 +592,7 @@ gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/home/linuxdevelopos/Linu
 ld -o mmx64.so --hash-style=sysv -nostdlib -znocombreloc -T /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/elf_x86_64_efi.lds -shared -Bsymbolic -Lgnu-efi/x86_64/gnuefi -Lgnu-efi/x86_64/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o --build-id=sha1  --no-undefined MokManager.o PasswordCrypt.o crypt_blowfish.o errlog.o sbat_data.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/x86_64/lib/libefi.a gnu-efi/x86_64/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/9/libgcc.a lib/lib.a
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
-	-j .rela* -j .reloc -j .eh_frame -j .sbat \
+	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
 	-j .debug_info -j .debug_abbrev -j .debug_aranges \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
@@ -601,28 +601,28 @@ gcc -std=gnu11 -ggdb -ffreestanding -fmacro-prefix-map=/home/linuxdevelopos/Linu
 ld -o fbx64.so --hash-style=sysv -nostdlib -znocombreloc -T /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/elf_x86_64_efi.lds -shared -Bsymbolic -Lgnu-efi/x86_64/gnuefi -Lgnu-efi/x86_64/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/x86_64/gnuefi/crt0-efi-x86_64.o --build-id=sha1  --no-undefined fallback.o tpm.o errlog.o sbat_data.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/x86_64/lib/libefi.a gnu-efi/x86_64/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/9/libgcc.a lib/lib.a
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
-	-j .rela* -j .reloc -j .eh_frame -j .sbat \
+	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
 	-j .debug_info -j .debug_abbrev -j .debug_aranges \
 	-j .debug_line -j .debug_str -j .debug_ranges \
 	-j .note.gnu.build-id \
 	fbx64.so fbx64.efi.debug
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
-	-j .rela* -j .reloc -j .eh_frame \
+	-j .rela* -j .dyn -j .reloc -j .eh_frame \
 	-j .vendor_cert -j .sbat \
 	--target efi-app-x86_64 mmx64.so mmx64.efi
 # I am tired of wasting my time fighting binutils timestamp code.
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=mmx64.efi
 记录了4+0 的读入
 记录了4+0 的写出
-4字节已复制，0.000119622 s，33.4 kB/s
+4字节已复制，0.000112879 s，35.4 kB/s
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
-	-j .rela* -j .reloc -j .eh_frame \
+	-j .rela* -j .dyn -j .reloc -j .eh_frame \
 	-j .vendor_cert -j .sbat \
 	--target efi-app-x86_64 fbx64.so fbx64.efi
 # I am tired of wasting my time fighting binutils timestamp code.
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=fbx64.efi
 记录了4+0 的读入
 记录了4+0 的写出
-4字节已复制，0.000134918 s，29.6 kB/s
+4字节已复制，0.000124746 s，32.1 kB/s
