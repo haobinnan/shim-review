@@ -62,6 +62,12 @@ What patches are being applied and why:
 - 379.patch
 - 383.patch
 - 387.patch
+- 365.patch
+- 393-1.patch
+- 393-2.patch
+- 396.patch
+- 399-1.patch
+- 399-2.patch
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
@@ -76,7 +82,7 @@ What exact implementation of Secureboot in GRUB2 ( if this is your bootloader ) 
 * Upstream GRUB2 shim_lock verifier or * Downstream RHEL/Fedora/Debian/Canonical like implementation ?
 -------------------------------------------------------------------------------
 - Downstream RHEL/Fedora/Debian/Canonical like implementation
-- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.04-1ubuntu45
+- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.04-1ubuntu46
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2, and previous shims were trusting affected
@@ -149,7 +155,7 @@ Notes:
 ├── README.md
 ├── Patches                             (SHIM Patches)
 ├── shim_orig
-│   ├── shim_v15.4_20210713.cab
+│   ├── shim_v15.4_20210809.cab
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)
