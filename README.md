@@ -137,7 +137,9 @@ Notes:
 - File lists:
 ```text
 ├── CertFile.cer                        (Certificate embedded in SHIM)
+├── dbx.hashes                          (File Blacklist)
 ├── Dockerfile
+├── generate_dbx_list                   (Generate a DBX file)
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
 ├── Patches                             (SHIM Patches)
