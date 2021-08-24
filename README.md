@@ -49,25 +49,12 @@ URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-- shim-15.4-branch-update-.gitmodules-to-point-at-shim.patch
-- Fix-a-broken-file-header-on-ia32.patch
-- 359.patch
-- 361.patch
-- 362.patch
-- 364.patch
-- ubuntu-no-addend-vendor-dbx.patch
-- 369.patch
-- 372.patch
-- 378.patch
-- 379.patch
-- 383.patch
-- 387.patch
-- 365.patch
-- 393-1.patch
-- 393-2.patch
-- 396.patch
-- 399-1.patch
-- 399-2.patch
+- fix-import_one_mok_state.patch
+- fix-broken-ia32-reloc.patch
+- MOK-BootServicesData.patch
+- Don-t-call-QueryVariableInfo-on-EFI-1.10-machines.patch
+- relax_check_for_import_mok_state.patch
+- fix_arm64_rela_sections.patch
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
@@ -155,7 +142,7 @@ Notes:
 ├── README.md
 ├── Patches                             (SHIM Patches)
 ├── shim_orig
-│   ├── shim_v15.4_20210809.cab
+│   ├── shim_v15.4_20210824.cab
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)

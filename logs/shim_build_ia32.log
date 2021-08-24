@@ -491,10 +491,10 @@ make -C /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi
 make[2]: 进入目录“/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/ia32/lib”
 make -C /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/ia32/inc -f /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//inc/Makefile SRCDIR=/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//inc ARCH=ia32
 make[2]: 进入目录“/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/ia32/inc”
-gcc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc -isystem /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/boxdraw.c -o boxdraw.o
-gcc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc -isystem /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/smbios.c -o smbios.o
 make[2]: 对“all”无需做任何事。
 make[2]: 离开目录“/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/ia32/inc”
+gcc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc -isystem /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/boxdraw.c -o boxdraw.o
+gcc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc -isystem /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/smbios.c -o smbios.o
 gcc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc -isystem /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/console.c -o console.o
 gcc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc -isystem /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/crc.c -o crc.o
 gcc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc -isystem /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/9/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/data.c -o data.o
@@ -569,14 +569,14 @@ make[1]: 离开目录“/home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-
 ld -o shimia32.so --hash-style=sysv -nostdlib -znocombreloc -T /home/linuxdevelopos/LinuxProject/LinuxSystem/shim/shim-tmp/shim/elf_ia32_efi.lds -shared -Bsymbolic -Lgnu-efi/ia32/gnuefi -Lgnu-efi/ia32/lib -LCryptlib -LCryptlib/OpenSSL gnu-efi/ia32/gnuefi/crt0-efi-ia32.o --build-id=sha1  --no-undefined shim.o mok.o netboot.o cert.o replacements.o tpm.o version.o errlog.o sbat.o sbat_data.o pe.o httpboot.o csv.o Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a lib/lib.a gnu-efi/ia32/lib/libefi.a gnu-efi/ia32/gnuefi/libgnuefi.a -lefi -lgnuefi --start-group Cryptlib/libcryptlib.a Cryptlib/OpenSSL/libopenssl.a --end-group /usr/lib/gcc/x86_64-linux-gnu/9/32/libgcc.a lib/lib.a
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
-	-j .rela* -j .dyn -j .reloc -j .eh_frame \
-	-j .vendor_cert -j .sbat \
+	-j .rela* -j .reloc -j .eh_frame \
+	-j .vendor_cert -j .dyn -j .sbat \
 	--target efi-app-ia32 shimia32.so shimia32.efi
 # I am tired of wasting my time fighting binutils timestamp code.
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=shimia32.efi
 记录了4+0 的读入
 记录了4+0 的写出
-4字节已复制，0.000101122 s，39.6 kB/s
+4字节已复制，0.000129214 s，31.0 kB/s
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
@@ -609,21 +609,21 @@ objcopy -D -j .text -j .sdata -j .data \
 objcopy: fbia32.so: warning: empty loadable segment detected at vaddr=0, is this intentional?
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
-	-j .rela* -j .dyn -j .reloc -j .eh_frame \
-	-j .vendor_cert -j .sbat \
+	-j .rela* -j .reloc -j .eh_frame \
+	-j .vendor_cert -j .dyn -j .sbat \
 	--target efi-app-ia32 mmia32.so mmia32.efi
 # I am tired of wasting my time fighting binutils timestamp code.
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=mmia32.efi
 记录了4+0 的读入
 记录了4+0 的写出
-4字节已复制，0.000131589 s，30.4 kB/s
+4字节已复制，0.00011186 s，35.8 kB/s
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
-	-j .rela* -j .dyn -j .reloc -j .eh_frame \
-	-j .vendor_cert -j .sbat \
+	-j .rela* -j .reloc -j .eh_frame \
+	-j .vendor_cert -j .dyn -j .sbat \
 	--target efi-app-ia32 fbia32.so fbia32.efi
 # I am tired of wasting my time fighting binutils timestamp code.
 dd conv=notrunc bs=1 count=4 seek=136 if=/dev/zero of=fbia32.efi
 记录了4+0 的读入
 记录了4+0 的写出
-4字节已复制，0.000117088 s，34.2 kB/s
+4字节已复制，0.000120357 s，33.2 kB/s
