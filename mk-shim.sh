@@ -159,7 +159,7 @@ echo "-------------------------------------------------------------"
 build x86_64 x64
 #x86_64
 
-rm -rf ${OBJ_PROJECT}-tmp
+#rm -rf ${OBJ_PROJECT}-tmp
 
 echo ""
 echo ""

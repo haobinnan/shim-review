@@ -150,6 +150,9 @@ Notes:
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)
 │   └── shimx64.efi.sha256sum           (shimx64.efi sha256sum)
 └── logs
-    ├── shim_build_ia32.log             (log file for building 32bit SHIM file)
-    └── shim_build_x64.log              (log file for building 64bit SHIM file)
+│   ├── shim_build_ia32.log             (log file for building 32bit SHIM file)
+│   └── shim_build_x64.log              (log file for building 64bit SHIM file)
+└── vendor_dbx
+    ├── ia32_dbx.esl                    (32Bit dbx binary)
+    └── x64_dbx.esl                     (64Bit dbx binary)
 ```
