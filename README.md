@@ -107,7 +107,7 @@ hashes please briefly describe your certificate setup. If there are allow-listed
 please provide exact binaries for which hashes are created via file sharing service,
 available in public with anonymous access for verification
 -------------------------------------------------------------------------------
-- My certificate is stored in a db created by pesign, which is stored on a separate computer that is only used for signing and only few trusted administrators can access it. Linux kernel, grubia32.efi and grubx64.efi are signed using this certificate.
+- We only embed out CA certificate. This CA is used to sign further signing certificates which are used for signing the binaries. No other hashes are [CertFile.cer]
 
 -------------------------------------------------------------------------------
 If you are re-using a previously used (CA) certificate, you will need
