@@ -22,7 +22,11 @@ Who is the primary contact for security updates, etc.
 - Name: Hao Binnan
 - Position: Managing Director
 - Email address: haobinnan@gmail.com
-- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the Linux community: https://pgp.mit.edu/pks/lookup?op=get&search=0xF83BB3599EF21740
+- PGP key fingerprint: 96781e8cb21e1e603997811df83bb3599ef21740
+
+(Key should be signed by the other security contacts, pushed to a keyserver
+like keyserver.ubuntu.com, and preferably have signatures that are reasonably
+well known in the Linux community.)
 
 -------------------------------------------------------------------------------
 Who is the secondary contact for security updates, etc.
@@ -30,7 +34,11 @@ Who is the secondary contact for security updates, etc.
 - Name: Liu jia
 - Position: Managing Director
 - Email address: liusirjiayou@126.com
-- PGP key, signed by the other security contacts, and preferably also with signatures that are reasonably well known in the Linux community: https://pgp.mit.edu/pks/lookup?op=get&search=0x90DC2D87569E7070
+- PGP key fingerprint: 8f1cbc231e3f09bb285821ba90dc2d87569e7070
+
+(Key should be signed by the other security contacts, pushed to a keyserver
+like keyserver.ubuntu.com, and preferably have signatures that are reasonably
+well known in the Linux community.)
 
 -------------------------------------------------------------------------------
 Please create your shim binaries starting with the 15.4 shim release tar file:
@@ -39,7 +47,7 @@ https://github.com/rhboot/shim/releases/download/15.4/shim-15.4.tar.bz2
 This matches https://github.com/rhboot/shim/releases/tag/15.4 and contains
 the appropriate gnu-efi source.
 -------------------------------------------------------------------------------
-- This is based on shim 15.4
+- This is based on shim 15.5
 
 -------------------------------------------------------------------------------
 URL for a repo that contains the exact code which was built to get this binary:
@@ -49,12 +57,7 @@ URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
 What patches are being applied and why:
 -------------------------------------------------------------------------------
-- fix-import_one_mok_state.patch
-- fix-broken-ia32-reloc.patch
-- MOK-BootServicesData.patch
-- Don-t-call-QueryVariableInfo-on-EFI-1.10-machines.patch
-- relax_check_for_import_mok_state.patch
-- fix_arm64_rela_sections.patch
+- No patches have been applied
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
@@ -69,7 +72,7 @@ What exact implementation of Secureboot in GRUB2 ( if this is your bootloader ) 
 * Upstream GRUB2 shim_lock verifier or * Downstream RHEL/Fedora/Debian/Canonical like implementation ?
 -------------------------------------------------------------------------------
 - Downstream RHEL/Fedora/Debian/Canonical like implementation
-- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.04-1ubuntu46
+- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.06-2ubuntu5
 
 -------------------------------------------------------------------------------
 If bootloader, shim loading is, GRUB2, and previous shims were trusting affected
@@ -120,7 +123,7 @@ apply. Please describe your strategy.
 
 -------------------------------------------------------------------------------
 What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
-If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and the differences would be.
+If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and what the differences would be.
 -------------------------------------------------------------------------------
 - Dockerfile to reproduce build is included.
 
@@ -142,7 +145,6 @@ Notes:
 ├── generate_dbx_list                   (Generate a DBX file)
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
-├── Patches                             (SHIM Patches)
 ├── shim_orig
 │   ├── shim_v15.4_20210824.cab
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
