@@ -146,7 +146,7 @@ Notes:
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
 ├── shim_orig
-│   ├── shim_v15.4_20210824.cab
+│   ├── shim_v15.5_20220311.cab
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)
