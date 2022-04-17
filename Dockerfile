@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM debian:bullseye
 MAINTAINER binnan_hao<haobinnan@gmail.com>
 
 #update sources.list
@@ -9,7 +9,7 @@ RUN apt update -y && \
     DEBIAN_FRONTEND=noninteractive apt install -y devscripts dos2unix pesign
 
 #set git proxy
-# RUN git config --global http.proxy http://192.168.1.66:10809
+# RUN git config --global http.proxy http://192.168.1.66:10811
 #set git proxy
 
 #git
