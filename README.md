@@ -164,8 +164,6 @@ sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
 shim.isoo,1,Isoo,shim,15.6,https://www.isoo.com/
 
---------------------------------------------------------------------------------------------------
-
 SBAT for grub2:
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
