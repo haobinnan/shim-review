@@ -1,23 +1,23 @@
 -------------------------------------------------------------------------------
-What organization or people are asking to have this signed:
+### What organization or people are asking to have this signed?
 -------------------------------------------------------------------------------
 - Qinhuangdao Yizhishu Software Development Co., Ltd.
 - Isoo is a software developer for data recovery, disk utilities and system backup. https://isoo.com/
 - Managing Director: Hao Binnan
 
 -------------------------------------------------------------------------------
-What product or service is this for:
+### What product or service is this for?
 -------------------------------------------------------------------------------
 - This is Isoo’s Linux-based operating system. We are going to develop some function based on the OS, such as resize partition, back up & restore operating system, etc.
 
 -------------------------------------------------------------------------------
-What's the justification that this really does need to be signed for the whole world to be able to boot it:
+### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
 - Isoo wants to employ Secure Boot for building a trusted operating system from Shim to GRUB to the kernel to signed filesystem partitions. Secure Boot is the first step for this.
 - Isoo would like customers to be able to run Isoo’s Linux-based system on any amd64(64Bit) and x86(32Bit) device without disabling Secure Boot.
 
 -------------------------------------------------------------------------------
-Who is the primary contact for security updates, etc.
+### Who is the primary contact for security updates, etc.?
 -------------------------------------------------------------------------------
 - Name: Hao Binnan
 - Position: Managing Director
@@ -29,7 +29,7 @@ like keyserver.ubuntu.com, and preferably have signatures that are reasonably
 well known in the Linux community.)
 
 -------------------------------------------------------------------------------
-Who is the secondary contact for security updates, etc.
+### Who is the secondary contact for security updates, etc.?
 -------------------------------------------------------------------------------
 - Name: Liu jia
 - Position: Managing Director
@@ -41,100 +41,177 @@ like keyserver.ubuntu.com, and preferably have signatures that are reasonably
 well known in the Linux community.)
 
 -------------------------------------------------------------------------------
-Please create your shim binaries starting with the 15.4 shim release tar file:
-https://github.com/rhboot/shim/releases/download/15.4/shim-15.4.tar.bz2
+### Were these binaries created from the 15.6 shim release tar?
+Please create your shim binaries starting with the 15.6 shim release tar file: https://github.com/rhboot/shim/releases/download/15.6/shim-15.6.tar.bz2
 
-This matches https://github.com/rhboot/shim/releases/tag/15.4 and contains
-the appropriate gnu-efi source.
--------------------------------------------------------------------------------
-- This is based on shim 15.5
+This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the appropriate gnu-efi source.
 
 -------------------------------------------------------------------------------
-URL for a repo that contains the exact code which was built to get this binary:
+- This is the unmodified shim-15.6 release.
+
+-------------------------------------------------------------------------------
+### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
 - https://github.com/rhboot/shim
 
 -------------------------------------------------------------------------------
-What patches are being applied and why:
+### What patches are being applied and why:
 -------------------------------------------------------------------------------
 - No patches have been applied
 
 -------------------------------------------------------------------------------
-If bootloader, shim loading is, GRUB2: is CVE-2020-14372, CVE-2020-25632,
- CVE-2020-25647, CVE-2020-27749, CVE-2020-27779, CVE-2021-20225, CVE-2021-20233,
- CVE-2020-10713, CVE-2020-14308, CVE-2020-14309, CVE-2020-14310, CVE-2020-14311,
- CVE-2020-15705, and if you are shipping the shim_lock module CVE-2021-3418
+### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 -------------------------------------------------------------------------------
-- Yes
+- Downstream RHEL/Fedora/Debian/Canonical-like implementation
+- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.06-2ubuntu7
 
 -------------------------------------------------------------------------------
-What exact implementation of Secureboot in GRUB2 ( if this is your bootloader ) you have ?
-* Upstream GRUB2 shim_lock verifier or * Downstream RHEL/Fedora/Debian/Canonical like implementation ?
+### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, or the June 7th 2022 grub2 CVE list:
+* CVE-2020-14372
+* CVE-2020-25632
+* CVE-2020-25647
+* CVE-2020-27749
+* CVE-2020-27779
+* CVE-2021-20225
+* CVE-2021-20233
+* CVE-2020-10713
+* CVE-2020-14308
+* CVE-2020-14309
+* CVE-2020-14310
+* CVE-2020-14311
+* CVE-2020-15705
+* CVE-2021-3418 (if you are shipping the shim_lock module)
+
+* CVE-2021-3695
+* CVE-2021-3696
+* CVE-2021-3697
+* CVE-2022-28733
+* CVE-2022-28734
+* CVE-2022-28735
+* CVE-2022-28736
+* CVE-2022-28737
+
+### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
+### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
-- Downstream RHEL/Fedora/Debian/Canonical like implementation
-- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.06-2ubuntu5
+- shim builds from before SBAT support have been revoked, and the cert this shim trusts has never been used to build any grub2 or kernel with these vulnerabilities.
 
 -------------------------------------------------------------------------------
-If bootloader, shim loading is, GRUB2, and previous shims were trusting affected
-by CVE-2020-14372, CVE-2020-25632, CVE-2020-25647, CVE-2020-27749,
-  CVE-2020-27779, CVE-2021-20225, CVE-2021-20233, CVE-2020-10713,
-  CVE-2020-14308, CVE-2020-14309, CVE-2020-14310, CVE-2020-14311, CVE-2020-15705,
-  and if you were shipping the shim_lock module CVE-2021-3418
-  ( July 2020 grub2 CVE list + March 2021 grub2 CVE list )
-  grub2:
-* were old shims hashes provided to Microsoft for verification
-  and to be added to future DBX update ?
-* Does your new chain of trust disallow booting old, affected by CVE-2020-14372,
-  CVE-2020-25632, CVE-2020-25647, CVE-2020-27749,
-  CVE-2020-27779, CVE-2021-20225, CVE-2021-20233, CVE-2020-10713,
-  CVE-2020-14308, CVE-2020-14309, CVE-2020-14310, CVE-2020-14311, CVE-2020-15705,
-  and if you were shipping the shim_lock module CVE-2021-3418
-  ( July 2020 grub2 CVE list + March 2021 grub2 CVE list )
-  grub2 builds ?
--------------------------------------------------------------------------------
-- No
-- Yes, the new chain of trust disallows booting old, affected by CVE-2020-14372,....
+### If your boot chain of trust includes a Linux kernel:
+### Is upstream commit [1957a85b0032a81e6482ca4aab883643b8dae06e "efi: Restrict efivar_ssdt_load when the kernel is locked down"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=1957a85b0032a81e6482ca4aab883643b8dae06e) applied?
+### Is upstream commit [75b0cea7bf307f362057cc778efe89af4c615354 "ACPI: configfs: Disallow loading ACPI tables when locked down"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=75b0cea7bf307f362057cc778efe89af4c615354) applied?
+### Is upstream commit [eadb2f47a3ced5c64b23b90fd2a3463f63726066 "lockdown: also lock down previous kgdb use"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=eadb2f47a3ced5c64b23b90fd2a3463f63726066) applied?
 
 -------------------------------------------------------------------------------
-If your boot chain of trust includes linux kernel, is
-"efi: Restrict efivar_ssdt_load when the kernel is locked down"
-upstream commit 1957a85b0032a81e6482ca4aab883643b8dae06e applied ?
-Is "ACPI: configfs: Disallow loading ACPI tables when locked down"
-upstream commit 75b0cea7bf307f362057cc778efe89af4c615354 applied ?
--------------------------------------------------------------------------------
-- Yes. CVE-2020-15780 and CVE-2019-20908 fixed by these commits
+- All of the following commits are present:
+- 475fb4e8b2f4444d1d7b406ff3a7d21bc89a1e6f 1957a85b0032a81e6482ca4aab883643b8dae06e 612bd01fc6e04c3ce9eb59587b4a7e4ebd6aff35 75b0cea7bf307f362057cc778efe89af4c615354 435d1a471598752446a72ad1201b3c980526d869
+- And the configuration setting CONFIG_EFI_CUSTOM_SSDT_OVERLAYS is disabled.
 
 -------------------------------------------------------------------------------
-If you use vendor_db functionality of providing multiple certificates and/or
-hashes please briefly describe your certificate setup. If there are allow-listed hashes
-please provide exact binaries for which hashes are created via file sharing service,
-available in public with anonymous access for verification
+### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
+### If there are allow-listed hashes please provide exact binaries for which hashes are created via file sharing service, available in public with anonymous access for verification.
 -------------------------------------------------------------------------------
 - We only embed out CA certificate. This CA is used to sign further signing certificates which are used for signing the binaries. No other hashes are [CertFile.cer]
 
 -------------------------------------------------------------------------------
-If you are re-using a previously used (CA) certificate, you will need
-to add the hashes of the previous GRUB2 binaries to vendor_dbx in shim
-in order to prevent GRUB2 from being able to chainload those older GRUB2
-binaries. If you are changing to a new (CA) certificate, this does not
-apply. Please describe your strategy.
+### If you are re-using a previously used (CA) certificate, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs to vendor_dbx in shim in order to prevent GRUB2 from being able to chainload those older GRUB2 binaries. If you are changing to a new (CA) certificate, this does not apply.
+### Please describe your strategy.
 -------------------------------------------------------------------------------
 - We switched to a new certificate after boothole2
 
 -------------------------------------------------------------------------------
-What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as close as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
-If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and what the differences would be.
+### What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as closely as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
+### If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and what the differences would be.
 -------------------------------------------------------------------------------
 - Dockerfile to reproduce build is included.
 
 -------------------------------------------------------------------------------
-Which files in this repo are the logs for your build?   This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
+### Which files in this repo are the logs for your build?
+This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
+
 -------------------------------------------------------------------------------
 - building 32bit SHIM file: logs/shim_build_ia32.log
 - building 64bit SHIM file: logs/shim_build_x64.log
 
 -------------------------------------------------------------------------------
-Add any additional information you think we may need to validate this shim
+### What changes were made since your SHIM was last signed?
+-------------------------------------------------------------------------------
+- We switched to shim-15.6 and updated .sbat.
+
+-------------------------------------------------------------------------------
+### What is the SHA256 hash of your final SHIM binary?
+-------------------------------------------------------------------------------
+- shimia32.efi.sha256sum: 5306c91274b4678e6ad76345904064a61cf4c79fa389b7e0a101904600ada68d
+- shimx64.efi.sha256sum: 787e59f2c49e0a7e0ab2f3748c4213b98e2445f2500b0bed4f158d9d3468ef62
+
+-------------------------------------------------------------------------------
+### How do you manage and protect the keys used in your SHIM?
+-------------------------------------------------------------------------------
+- They're stored in an HSM attached to dedicated build hosts. These hosts get used as the builder only when a production build is scheduled, only for specific packages, and only specific people can schedule them.
+
+-------------------------------------------------------------------------------
+### Do you use EV certificates as embedded certificates in the SHIM?
+-------------------------------------------------------------------------------
+- No.
+
+-------------------------------------------------------------------------------
+### Do you add a vendor-specific SBAT entry to the SBAT section in each binary that supports SBAT metadata ( grub2, fwupd, fwupdate, shim + all child shim binaries )?
+### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
+### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
+-------------------------------------------------------------------------------
+- SBAT for shim:
+> sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+> shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
+> shim.isoo,1,Isoo,shim,15.6,https://www.isoo.com/
+
+--------------------------------------------------------------------------------------------------
+
+- SBAT for grub2:
+> sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+> grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
+> grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu7,https://www.ubuntu.com/
+> grub.isoo,1,Isoo,grub2,2.06-isoo,https://www.isoo.com/
+
+-------------------------------------------------------------------------------
+### Which modules are built into your signed grub image?
+-------------------------------------------------------------------------------
+- newc / memdisk / cpio / part_gpt / part_msdos / msdospart / ntfs / ntfscomp / fat / exfat / normal / chain / boot / configfile / multiboot / png / all_video / search / blocklist / iso9660 / udf / minicmd / loopback / gfxmenu / gfxterm / reboot / romfs / procfs / sleep / ls / cat / echo / halt / test / probe / linux / cpuid / scsi / lsefi / lsefimmap / efifwsetup / efinet / linuxefi / backtrace / font / loadenv / syslinuxcfg / video
+
+-------------------------------------------------------------------------------
+### What is the origin and full version number of your bootloader (GRUB or other)?
+-------------------------------------------------------------------------------
+- GRUB2 ubuntu version: import/2.06-2ubuntu7
+- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.06-2ubuntu7
+- No extra patches
+
+-------------------------------------------------------------------------------
+### If your SHIM launches any other components, please provide further details on what is launched.
+-------------------------------------------------------------------------------
+- Our shim does not load any other components.
+
+-------------------------------------------------------------------------------
+### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
+-------------------------------------------------------------------------------
+- grub2 verifies signatures on booted kernels via shim.
+
+-------------------------------------------------------------------------------
+### How do the launched components prevent execution of unauthenticated code?
+-------------------------------------------------------------------------------
+- Grub2 include common secure boot patches so they will only load appropriately signed binaries.
+
+-------------------------------------------------------------------------------
+### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB)?
+-------------------------------------------------------------------------------
+- No, our grub does not allow loading unsigned kernels when secure boot is enabled.
+
+-------------------------------------------------------------------------------
+### What kernel are you using? Which patches does it includes to enforce Secure Boot?
+-------------------------------------------------------------------------------
+- Linux Kernel: 5.15.44
+- It has the usual lockdown patches applied.
+
+-------------------------------------------------------------------------------
+### Add any additional information you think we may need to validate this shim.
 -------------------------------------------------------------------------------
 Notes:
 - File lists:
@@ -146,7 +223,7 @@ Notes:
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
 ├── shim_orig
-│   ├── shim_v15.5_20220311.cab
+│   ├── shim_v15.6_20220613.cab
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)
