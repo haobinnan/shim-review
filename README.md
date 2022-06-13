@@ -159,28 +159,23 @@ This should include logs for creating the buildroots, applying patches, doing th
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
-SBAT for shim:
+- SBAT for shim:
 
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+> sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
+> shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim  
+> shim.isoo,1,Isoo,shim,15.6,https://www.isoo.com/  
 
-shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
+- SBAT for grub2:
 
-shim.isoo,1,Isoo,shim,15.6,https://www.isoo.com/
-
-SBAT for grub2:
-
-sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-
-grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
-
-grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu7,https://www.ubuntu.com/
-
-grub.isoo,1,Isoo,grub2,2.06-isoo,https://www.isoo.com/
+> sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
+> grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/  
+> grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu7,https://www.ubuntu.com/  
+> grub.isoo,1,Isoo,grub2,2.06-isoo,https://www.isoo.com/  
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
 -------------------------------------------------------------------------------
-- newc / memdisk / cpio / part_gpt / part_msdos / msdospart / ntfs / ntfscomp / fat / exfat / normal / chain / boot / configfile / multiboot / png / all_video / search / blocklist / iso9660 / udf / minicmd / loopback / gfxmenu / gfxterm / reboot / romfs / procfs / sleep / ls / cat / echo / halt / test / probe / linux / cpuid / scsi / lsefi / lsefimmap / efifwsetup / efinet / linuxefi / backtrace / font / loadenv / syslinuxcfg / video
+> newc / memdisk / cpio / part_gpt / part_msdos / msdospart / ntfs / ntfscomp / fat / exfat / normal / chain / boot / configfile / multiboot / png / all_video / search / blocklist / iso9660 / udf / minicmd / loopback / gfxmenu / gfxterm / reboot / romfs / procfs / sleep / ls / cat / echo / halt / test / probe / linux / cpuid / scsi / lsefi / lsefimmap / efifwsetup / efinet / linuxefi / backtrace / font / loadenv / syslinuxcfg / video
 
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
