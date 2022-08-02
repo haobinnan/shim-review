@@ -63,7 +63,7 @@ This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the a
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 -------------------------------------------------------------------------------
 - Downstream RHEL/Fedora/Debian/Canonical-like implementation
-- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.06-2ubuntu7
+- https://salsa.debian.org/grub-team/grub/-/tree/debian/2.06-3
 
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, or the June 7th 2022 grub2 CVE list:
@@ -168,8 +168,8 @@ This should include logs for creating the buildroots, applying patches, doing th
 - SBAT for grub2:
 
 > sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
-> grub,1,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/  
-> grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu7,https://www.ubuntu.com/  
+> grub,2,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/  
+> grub.debian,1,Debian,grub2,2.06-3,https://tracker.debian.org/pkg/grub2  
 > grub.isoo,1,Isoo,grub2,2.06-isoo,https://www.isoo.com/  
 
 -------------------------------------------------------------------------------
@@ -180,8 +180,8 @@ This should include logs for creating the buildroots, applying patches, doing th
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-- GRUB2 ubuntu version: import/2.06-2ubuntu7
-- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.06-2ubuntu7
+- GRUB2 debian version: 2.06-3
+- https://salsa.debian.org/grub-team/grub/-/tree/debian/2.06-3
 - No extra patches
 
 -------------------------------------------------------------------------------
