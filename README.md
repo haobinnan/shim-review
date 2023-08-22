@@ -115,7 +115,7 @@ This matches https://github.com/rhboot/shim/releases/tag/15.7 and contains the a
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 *******************************************************************************
-- shim builds from before SBAT support have been revoked, and the cert this shim trusts has never been used to build any grub2 or kernel with these vulnerabilities.
+- SHIM builds from before SBAT support have been revoked, and the cert this shim trusts has never been used to build any grub2 or kernel with these vulnerabilities.
 
 *******************************************************************************
 ### If your boot chain of trust includes a Linux kernel:
