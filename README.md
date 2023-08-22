@@ -185,16 +185,16 @@ This should include logs for creating the buildroots, applying patches, doing th
 *******************************************************************************
 - SBAT for shim:
 
-> sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-> shim,3,UEFI shim,shim,1,https://github.com/rhboot/shim
-> shim.isoo,1,Isoo,shim,15.7,https://www.isoo.com/
+> sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
+> shim,3,UEFI shim,shim,1,https://github.com/rhboot/shim  
+> shim.isoo,1,Isoo,shim,15.7,https://www.isoo.com/  
 
 - SBAT for grub2:
 
-> sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
-> grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/
-> grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu14,https://www.ubuntu.com/
-> grub.isoo,1,Isoo,grub2,2.06-isoo,https://www.isoo.com/
+> sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
+> grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/  
+> grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu14,https://www.ubuntu.com/  
+> grub.isoo,1,Isoo,grub2,2.06-isoo,https://www.isoo.com/  
 
 *******************************************************************************
 ### Which modules are built into your signed grub image?
