@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:bookworm
 MAINTAINER binnan_hao<haobinnan@gmail.com>
 
 #update sources.list
@@ -13,7 +13,7 @@ RUN apt update -y && \
 #set git proxy
 
 #git
-RUN git clone --branch isoo-shim-20220802 https://github.com/haobinnan/shim-review.git
+RUN git clone --branch isoo-shim-20230822 https://github.com/haobinnan/shim-review.git
 WORKDIR /shim-review
 #git
 
