@@ -165,8 +165,8 @@ This should include logs for creating the buildroots, applying patches, doing th
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-- shimia32.efi.sha256sum: 7e6817db37778605193b8514661fd313242f91d3e14dfcd9c198839ef842df47
-- shimx64.efi.sha256sum: 39e41b55268c6409e5c95fbc551625c6f6e83555a2f7eeaf76088c330ff9df01
+- shimia32.efi.sha256sum: 16040e1ec64d3141f1d4f822567efe21e42a8198f470f6c24ab5e15059249d68
+- shimx64.efi.sha256sum: bf29426f474c1dc6596bb4da02b05a8360c8b3a5d8449f023cca2eec5bacf6b1
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your SHIM?
@@ -216,7 +216,7 @@ This should include logs for creating the buildroots, applying patches, doing th
 *******************************************************************************
 ### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
 *******************************************************************************
-- grub2 verifies signatures on booted kernels via shim.
+- Grub2 verifies signatures on booted kernels via shim.
 
 *******************************************************************************
 ### How do the launched components prevent execution of unauthenticated code?
