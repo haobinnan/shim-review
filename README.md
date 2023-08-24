@@ -66,7 +66,7 @@ This matches https://github.com/rhboot/shim/releases/tag/15.7 and contains the a
 *******************************************************************************
 ### What patches are being applied and why:
 *******************************************************************************
-- No patches have been applied
+- 0001-NX-compatibility-default.patch
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)

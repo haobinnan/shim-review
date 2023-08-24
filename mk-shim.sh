@@ -82,18 +82,18 @@ cd ../../
 #Patches
 
 #Patches
-# if [ -d ./Patches ]; then
-#     if [ -f ./Patches/series ]; then
-#         cd ./${OBJ_PROJECT}-tmp/${OBJ_PROJECT}
-#         cat ../../Patches/series | while read line
-#         do
-#             strfile="../../Patches/${line}"
-#             echo -e "\033[31m$strfile\033[0m"
-#             patch -p1 < $strfile
-#         done
-#         cd ../../
-#     fi
-# fi
+if [ -d ./Patches ]; then
+    if [ -f ./Patches/series ]; then
+        cd ./${OBJ_PROJECT}-tmp/${OBJ_PROJECT}
+        cat ../../Patches/series | while read line
+        do
+            strfile="../../Patches/${line}"
+            echo -e "\033[31m$strfile\033[0m"
+            patch -p1 < $strfile
+        done
+        cd ../../
+    fi
+fi
 #Patches
 
 #function
