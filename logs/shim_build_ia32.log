@@ -498,11 +498,11 @@ make -C /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/g
 make[2]: 进入目录“/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/ia32/lib”
 make -C /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/ia32/inc -f /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//inc/Makefile SRCDIR=/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//inc ARCH=ia32
 make[2]: 进入目录“/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/ia32/inc”
+make[2]: 对“all”无需做任何事。
+make[2]: 离开目录“/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/ia32/inc”
 gcc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc   -isystem /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/boxdraw.c -o boxdraw.o
 gcc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc   -isystem /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/smbios.c -o smbios.o
 gcc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc   -isystem /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/console.c -o console.o
-make[2]: 对“all”无需做任何事。
-make[2]: 离开目录“/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/ia32/inc”
 gcc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc   -isystem /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/crc.c -o crc.o
 gcc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc   -isystem /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/data.c -o data.o
 gcc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/ia32 -I/home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/inc/protocol -Wno-error=pragmas -mno-mmx -mno-sse -mno-avx -fpic -m32 -Os -Wall -Wextra -Wno-missing-field-initializers -Werror -fshort-wchar -fno-strict-aliasing -ffreestanding -fno-stack-protector -fno-stack-check -nostdinc   -isystem /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi/../include/system -isystem /usr/lib/gcc/x86_64-linux-gnu/12/include -fno-merge-all-constants -DCONFIG_ia32 -c /home/linuxdevelopos/LinuxProject/EassosLinuxSystem/shim/shim-tmp/shim/gnu-efi//lib/debug.c -o debug.o
@@ -582,9 +582,7 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
 	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-ia32 shimia32.so shimia32.efi
-./post-process-pe -vv  shimia32.efi
-set_dll_characteristics():354: Updating DLL Characteristics from 0x0000 to 0x0100
-fix_checksum():412: Updating checksum from 0x000c39ed to 0x000c3aed
+./post-process-pe -vv shimia32.efi
 objcopy -D -j .text -j .sdata -j .data \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame -j .sbat \
@@ -627,14 +625,10 @@ objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
 	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-ia32 mmia32.so mmia32.efi
-./post-process-pe -vv  mmia32.efi
-set_dll_characteristics():354: Updating DLL Characteristics from 0x0000 to 0x0100
-fix_checksum():412: Updating checksum from 0x000aa611 to 0x000aa711
+./post-process-pe -vv mmia32.efi
 objcopy -D -j .text -j .sdata -j .data -j .data.ident \
 	-j .dynamic -j .rodata -j .rel* \
 	-j .rela* -j .dyn -j .reloc -j .eh_frame \
 	-j .vendor_cert -j .sbat -j .sbatlevel \
 	--target efi-app-ia32 fbia32.so fbia32.efi
-./post-process-pe -vv  fbia32.efi
-set_dll_characteristics():354: Updating DLL Characteristics from 0x0000 to 0x0100
-fix_checksum():412: Updating checksum from 0x000204f9 to 0x000205f9
+./post-process-pe -vv fbia32.efi

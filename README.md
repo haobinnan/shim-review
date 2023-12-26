@@ -66,7 +66,7 @@ This matches https://github.com/rhboot/shim/releases/tag/15.7 and contains the a
 *******************************************************************************
 ### What patches are being applied and why:
 *******************************************************************************
-- 0001-NX-compatibility-default.patch
+- No patches have been applied
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
@@ -75,39 +75,52 @@ This matches https://github.com/rhboot/shim/releases/tag/15.7 and contains the a
 - https://git.launchpad.net/ubuntu/+source/grub2/tree/?h=import/2.06-14
 
 *******************************************************************************
-### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, the June 7th 2022 grub2 CVE list, or the November 15th 2022 list, have fixes for all these CVEs been applied?
+### If shim is loading GRUB2 bootloader and your previously released shim booted a version of GRUB2 affected by any of the CVEs in the July 2020, the March 2021, the June 7th 2022, the November 15th 2022, or 3rd of October 2023 GRUB2 CVE list, have fixes for all these CVEs been applied?
 
-* CVE-2020-14372
-* CVE-2020-25632
-* CVE-2020-25647
-* CVE-2020-27749
-* CVE-2020-27779
-* CVE-2021-20225
-* CVE-2021-20233
-* CVE-2020-10713
-* CVE-2020-14308
-* CVE-2020-14309
-* CVE-2020-14310
-* CVE-2020-14311
-* CVE-2020-15705
-* CVE-2021-3418 (if you are shipping the shim_lock module)
-
-* CVE-2021-3695
-* CVE-2021-3696
-* CVE-2021-3697
-* CVE-2022-28733
-* CVE-2022-28734
-* CVE-2022-28735
-* CVE-2022-28736
-* CVE-2022-28737
-
-* CVE-2022-2601
-* CVE-2022-3775
+* 2020 July - BootHole
+  * Details: https://lists.gnu.org/archive/html/grub-devel/2020-07/msg00034.html
+  * CVE-2020-10713
+  * CVE-2020-14308
+  * CVE-2020-14309
+  * CVE-2020-14310
+  * CVE-2020-14311
+  * CVE-2020-15705
+  * CVE-2020-15706
+  * CVE-2020-15707
+* March 2021
+  * Details: https://lists.gnu.org/archive/html/grub-devel/2021-03/msg00007.html
+  * CVE-2020-14372
+  * CVE-2020-25632
+  * CVE-2020-25647
+  * CVE-2020-27749
+  * CVE-2020-27779
+  * CVE-2021-3418 (if you are shipping the shim_lock module)
+  * CVE-2021-20225
+  * CVE-2021-20233
+* June 2022
+  * Details: https://lists.gnu.org/archive/html/grub-devel/2022-06/msg00035.html, SBAT increase to 2
+  * CVE-2021-3695
+  * CVE-2021-3696
+  * CVE-2021-3697
+  * CVE-2022-28733
+  * CVE-2022-28734
+  * CVE-2022-28735
+  * CVE-2022-28736
+  * CVE-2022-28737
+* November 2022
+  * Details: https://lists.gnu.org/archive/html/grub-devel/2022-11/msg00059.html, SBAT increase to 3
+  * CVE-2022-2601
+  * CVE-2022-3775
+* October 2023 - NTFS vulnerabilities
+  * Details: https://lists.gnu.org/archive/html/grub-devel/2023-10/msg00028.html, SBAT increase to 4
+  * CVE-2023-4693
+  * CVE-2023-4692
 *******************************************************************************
 - The signed bootloaders are derived from grub 2.06 with all of the relevant patches.
 
 *******************************************************************************
-### If these fixes have been applied, have you set the global SBAT generation on your GRUB binary to 3?
+### If these fixes have been applied, is the upstream global SBAT generation in your GRUB2 binary set to 4?
+The entry should look similar to: `grub,4,Free Software Foundation,grub,GRUB_UPSTREAM_VERSION,https://www.gnu.org/software/grub/`
 *******************************************************************************
 - Yes
 
@@ -131,6 +144,12 @@ This matches https://github.com/rhboot/shim/releases/tag/15.7 and contains the a
 ### Do you build your signed kernel with additional local patches? What do they do?
 *******************************************************************************
 - We have applied lockdown patches, nothing else that might be security relevant here.
+
+*******************************************************************************
+### Do you use an ephemeral key for signing kernel modules?
+### If not, please describe how you ensure that one kernel build does not load modules built for another kernel.
+*******************************************************************************
+- When building the kernel, a ephemeral key is generated and signed.
 
 *******************************************************************************
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
@@ -165,8 +184,8 @@ This should include logs for creating the buildroots, applying patches, doing th
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-- shimia32.efi.sha256sum: 16040e1ec64d3141f1d4f822567efe21e42a8198f470f6c24ab5e15059249d68
-- shimx64.efi.sha256sum: bf29426f474c1dc6596bb4da02b05a8360c8b3a5d8449f023cca2eec5bacf6b1
+- shimia32.efi.sha256sum: 7e6817db37778605193b8514661fd313242f91d3e14dfcd9c198839ef842df47
+- shimx64.efi.sha256sum: 39e41b55268c6409e5c95fbc551625c6f6e83555a2f7eeaf76088c330ff9df01
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your SHIM?
@@ -179,9 +198,12 @@ This should include logs for creating the buildroots, applying patches, doing th
 - No.
 
 *******************************************************************************
-### Do you add a vendor-specific SBAT entry to the SBAT section in each binary that supports SBAT metadata ( grub2, fwupd, fwupdate, shim + all child shim binaries )?
+### Do you add a vendor-specific SBAT entry to the SBAT section in each binary that supports SBAT metadata ( GRUB2, fwupd, fwupdate, shim + all child shim binaries )?
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
+If you are using a downstream implementation of GRUB2 (e.g. from Fedora or Debian), please
+preserve the SBAT entry from those distributions and only append your own.
+More information on how SBAT works can be found [here](https://github.com/rhboot/shim/blob/main/SBAT.md).
 *******************************************************************************
 - SBAT for shim:
 
@@ -192,17 +214,17 @@ This should include logs for creating the buildroots, applying patches, doing th
 - SBAT for grub2:
 
 > sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
-> grub,3,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/  
+> grub,4,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/  
 > grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu14,https://www.ubuntu.com/  
 > grub.isoo,1,Isoo,grub2,2.06-isoo,https://www.isoo.com/  
 
 *******************************************************************************
-### Which modules are built into your signed grub image?
+### Which modules are built into your signed GRUB2 image?
 *******************************************************************************
 > newc / memdisk / cpio / part_gpt / part_msdos / msdospart / ntfs / ntfscomp / fat / exfat / normal / chain / boot / configfile / multiboot / png / all_video / search / blocklist / iso9660 / udf / minicmd / loopback / gfxmenu / gfxterm / reboot / romfs / procfs / sleep / ls / cat / echo / halt / test / probe / linux / cpuid / scsi / lsefi / lsefimmap / efifwsetup / efinet / linuxefi / backtrace / font / loadenv / syslinuxcfg / video
 
 *******************************************************************************
-### What is the origin and full version number of your bootloader (GRUB or other)?
+### What is the origin and full version number of your bootloader (GRUB2 or other)?
 *******************************************************************************
 - GRUB2 debian version: 2.06-2ubuntu14
 - https://git.launchpad.net/ubuntu/+source/grub2/tree/?h=import/2.06-14
@@ -224,7 +246,7 @@ This should include logs for creating the buildroots, applying patches, doing th
 - Grub2 include common secure boot patches so they will only load appropriately signed binaries.
 
 *******************************************************************************
-### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB)?
+### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB2)?
 *******************************************************************************
 - No, our grub does not allow loading unsigned kernels when secure boot is enabled.
 
@@ -247,7 +269,7 @@ Notes:
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
 ├── shim_orig
-│   ├── shim_v15.6_20220613.cab
+│   ├── shim_v15.7_20231226.cab
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)
