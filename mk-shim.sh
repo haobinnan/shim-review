@@ -7,7 +7,7 @@ fi
 
 Make="make -j$(cat /proc/cpuinfo | grep "cpu cores" | wc -l)"
 
-AtomLinux_ShimVNumber="15.7"
+AtomLinux_ShimVNumber="15.8"
 AtomLinux_DownloadURL="https://github.com/rhboot/shim.git"
 
 #Use Existing Certificate  (yes | no)
@@ -90,6 +90,12 @@ if [ -d ./Patches ]; then
             strfile="../../Patches/${line}"
             echo -e "\033[31m$strfile\033[0m"
             patch -p1 < $strfile
+            #Check patch
+            if [ ! $? -eq 0 ]; then
+                echo "Error: patch (shim) ."
+                exit 1
+            fi
+            #Check patch
         done
         cd ../../
     fi
