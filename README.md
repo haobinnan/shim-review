@@ -79,7 +79,8 @@ See https://techcommunity.microsoft.com/t5/hardware-dev-center/nx-exception-for-
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 *******************************************************************************
 - Downstream RHEL/Fedora/Debian/Canonical-like implementation
-- https://git.launchpad.net/ubuntu/+source/grub2/tree/?h=import/2.12-1ubuntu4
+- https://git.launchpad.net/ubuntu/+source/grub2/tree/?h=import/2.06-2ubuntu17
+- 2.06-2ubuntu17.2
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader and your previously released shim booted a version of GRUB2 affected by any of the CVEs in the July 2020, the March 2021, the June 7th 2022, the November 15th 2022, or 3rd of October 2023 GRUB2 CVE list, have fixes for all these CVEs been applied?
@@ -223,9 +224,9 @@ and only append your own. More information on how SBAT works can be found
 - SBAT for grub2:
 
 > sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
-> grub,4,Free Software Foundation,grub,2.12,https://www.gnu.org/software/grub/  
-> grub.ubuntu,1,Ubuntu,grub2,2.12-1ubuntu4,https://www.ubuntu.com/  
-> grub.isoo,1,Isoo,grub2,2.12-isoo,https://www.isoo.com/  
+> grub,4,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/  
+> grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu17.2,https://www.ubuntu.com/  
+> grub.isoo,1,Isoo,grub2,2.06-isoo,https://www.isoo.com/  
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader, which modules are built into your signed GRUB2 image?
@@ -240,8 +241,9 @@ and only append your own. More information on how SBAT works can be found
 *******************************************************************************
 ### What is the origin and full version number of your bootloader (GRUB2 or systemd-boot or other)?
 *******************************************************************************
-- GRUB2 debian version: 2.12-1ubuntu4
-- https://git.launchpad.net/ubuntu/+source/grub2/tree/?h=import/2.12-1ubuntu4
+- GRUB2 version: 2.06-2ubuntu17.2
+- https://git.launchpad.net/ubuntu/+source/grub2/tree/?h=import/2.06-2ubuntu17
+- 2.06-2ubuntu17.2
 - No extra patches
 
 *******************************************************************************
