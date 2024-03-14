@@ -67,6 +67,7 @@ This matches https://github.com/rhboot/shim/releases/tag/15.8 and contains the a
 ### What patches are being applied and why:
 *******************************************************************************
 - ignore-print.patch
+- shim-15.8-alt-Bump-grub-SBAT-revocation-to-4.patch
 
 *******************************************************************************
 ### Do you have the NX bit set in your shim? If so, is your entire boot stack NX-compatible and what testing have you done to ensure such compatibility?
@@ -193,8 +194,8 @@ For example, signing new kernel's variants, UKI, systemd-boot, new certs, new CA
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-- shimia32.efi.sha256sum: 0e4e97cc07162df08f29ad9d0a1b0d8f72205ed75e5da79e0b55798d434352dc
-- shimx64.efi.sha256sum: f2aff7865dc0a78761444245553b9bf01c4b43394091ce1f7e321cc06c7ae963
+- shimia32.efi.sha256sum: 70645f0a8d484cc217f038563f600528a6170d84079df5c1853595520e51630a
+- shimx64.efi.sha256sum: 962aff7f64d617d25a2b6cf9edca9c9a5af7c23633fbe5598ebb0d5306dfcccb
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your SHIM?
@@ -231,7 +232,7 @@ and only append your own. More information on how SBAT works can be found
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader, which modules are built into your signed GRUB2 image?
 *******************************************************************************
-> newc / memdisk / cpio / part_gpt / part_msdos / msdospart / ntfs / ntfscomp / fat / exfat / normal / chain / boot / configfile / multiboot / png / all_video / search / blocklist / iso9660 / udf / minicmd / loopback / gfxmenu / gfxterm / reboot / romfs / procfs / sleep / ls / cat / echo / halt / test / probe / linux / cpuid / scsi / lsefi / lsefimmap / efifwsetup / efinet / backtrace / font / loadenv / syslinuxcfg / video
+> newc / memdisk / cpio / part_gpt / part_msdos / msdospart / ntfs / ntfscomp / fat / exfat / normal / chain / boot / configfile / multiboot / png / all_video / search / blocklist / iso9660 / udf / minicmd / loopback / gfxmenu / gfxterm / reboot / romfs / procfs / sleep / ls / cat / echo / halt / test / probe / linux / cpuid / scsi / lsefi / lsefimmap / efifwsetup / efinet / linuxefi / backtrace / font / loadenv / syslinuxcfg / video
 
 *******************************************************************************
 ### If you are using systemd-boot on arm64 or riscv, is the fix for [unverified Devicetree Blob loading](https://github.com/systemd/systemd/security/advisories/GHSA-6m6p-rjcq-334c) included?
@@ -285,7 +286,7 @@ Notes:
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
 ├── shim_orig
-│   ├── shim_v15.8_20240228.cab
+│   ├── shim_v15.8_20240314.cab
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)
