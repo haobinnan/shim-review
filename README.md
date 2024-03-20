@@ -66,8 +66,8 @@ This matches https://github.com/rhboot/shim/releases/tag/15.8 and contains the a
 *******************************************************************************
 ### What patches are being applied and why:
 *******************************************************************************
-- ignore-print.patch
-- shim-15.8-alt-Bump-grub-SBAT-revocation-to-4.patch
+- ignore-print.patch: This patch ignores some warning messages from print output, for example: https://github.com/rhboot/shim/issues/506
+- shim-15.8-alt-Bump-grub-SBAT-revocation-to-4.patch: This patch is mainly used to prevent grub with sbat less than 4 from running.
 
 *******************************************************************************
 ### Do you have the NX bit set in your shim? If so, is your entire boot stack NX-compatible and what testing have you done to ensure such compatibility?
