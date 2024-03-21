@@ -80,7 +80,7 @@ See https://techcommunity.microsoft.com/t5/hardware-dev-center/nx-exception-for-
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 *******************************************************************************
 - Downstream RHEL/Fedora/Debian/Canonical-like implementation
-- https://git.launchpad.net/ubuntu/+source/grub2/tree/?h=import/2.06-2ubuntu17
+- https://git.launchpad.net/ubuntu/+source/grub2-unsigned/tree/?h=import/2.06-2ubuntu17
 - 2.06-2ubuntu17.2
 
 *******************************************************************************
@@ -125,7 +125,7 @@ See https://techcommunity.microsoft.com/t5/hardware-dev-center/nx-exception-for-
   * CVE-2023-4693
   * CVE-2023-4692
 *******************************************************************************
-- The signed bootloaders are derived from grub 2.12 with all of the relevant patches.
+- The signed bootloaders are derived from grub 2.06 with all of the relevant patches.
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader, and if these fixes have been applied, is the upstream global SBAT generation in your GRUB2 binary set to 4?
@@ -243,7 +243,7 @@ and only append your own. More information on how SBAT works can be found
 ### What is the origin and full version number of your bootloader (GRUB2 or systemd-boot or other)?
 *******************************************************************************
 - GRUB2 version: 2.06-2ubuntu17.2
-- https://git.launchpad.net/ubuntu/+source/grub2/tree/?h=import/2.06-2ubuntu17
+- https://git.launchpad.net/ubuntu/+source/grub2-unsigned/tree/?h=import/2.06-2ubuntu17
 - 2.06-2ubuntu17.2
 - No extra patches
 
