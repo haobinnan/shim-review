@@ -80,8 +80,8 @@ See https://techcommunity.microsoft.com/t5/hardware-dev-center/nx-exception-for-
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 *******************************************************************************
 - Downstream RHEL/Fedora/Debian/Canonical-like implementation
-- https://git.launchpad.net/ubuntu/+source/grub2-unsigned/tree/?h=import/2.06-2ubuntu17
-- 2.06-2ubuntu17.2
+- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.06-14
+- 2.06-2ubuntu14.4 -- https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/grub2-unsigned/2.06-2ubuntu14.4/grub2-unsigned_2.06-2ubuntu14.4.debian.tar.xz
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader and your previously released shim booted a version of GRUB2 affected by any of the CVEs in the July 2020, the March 2021, the June 7th 2022, the November 15th 2022, or 3rd of October 2023 GRUB2 CVE list, have fixes for all these CVEs been applied?
@@ -194,8 +194,8 @@ For example, signing new kernel's variants, UKI, systemd-boot, new certs, new CA
 *******************************************************************************
 ### What is the SHA256 hash of your final SHIM binary?
 *******************************************************************************
-- shimia32.efi.sha256sum: 70645f0a8d484cc217f038563f600528a6170d84079df5c1853595520e51630a
-- shimx64.efi.sha256sum: 962aff7f64d617d25a2b6cf9edca9c9a5af7c23633fbe5598ebb0d5306dfcccb
+- shimia32.efi.sha256sum: a0241fc871a04202815b54a54fefb7943b1e284ded07e8327d85a1948ba50c79
+- shimx64.efi.sha256sum: fadcacd698dd6d6828e576228e3be6e0845c0f80b1de0a961c6fdbf6a1a63ec4
 
 *******************************************************************************
 ### How do you manage and protect the keys used in your SHIM?
@@ -220,14 +220,14 @@ and only append your own. More information on how SBAT works can be found
 
 > sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
 > shim,4,UEFI shim,shim,1,https://github.com/rhboot/shim  
-> shim.isoo,1,Isoo,shim,15.8,https://www.isoo.com/  
+> shim.isoo,1,Isoo,shim,15.8,mail:haobinnan@gmail.com  
 
 - SBAT for grub2:
 
 > sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
 > grub,4,Free Software Foundation,grub,2.06,https://www.gnu.org/software/grub/  
-> grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu17.2,https://www.ubuntu.com/  
-> grub.isoo,1,Isoo,grub2,2.06-isoo,https://www.isoo.com/  
+> grub.ubuntu,1,Ubuntu,grub2,2.06-2ubuntu14.4,https://www.ubuntu.com/  
+> grub.isoo,1,Isoo,grub2,2.06-isoo,mail:haobinnan@gmail.com  
 
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader, which modules are built into your signed GRUB2 image?
@@ -242,9 +242,9 @@ and only append your own. More information on how SBAT works can be found
 *******************************************************************************
 ### What is the origin and full version number of your bootloader (GRUB2 or systemd-boot or other)?
 *******************************************************************************
-- GRUB2 version: 2.06-2ubuntu17.2
-- https://git.launchpad.net/ubuntu/+source/grub2-unsigned/tree/?h=import/2.06-2ubuntu17
-- 2.06-2ubuntu17.2
+- GRUB2 version: 2.06-2ubuntu14.4
+- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.06-14
+- 2.06-2ubuntu14.4 -- https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/grub2-unsigned/2.06-2ubuntu14.4/grub2-unsigned_2.06-2ubuntu14.4.debian.tar.xz
 - No extra patches
 
 *******************************************************************************
@@ -286,7 +286,7 @@ Notes:
 ├── mk-shim.sh                          (SHIM building script)
 ├── README.md
 ├── shim_orig
-│   ├── shim_v15.8_20240314.cab
+│   ├── shim_v15.8_20240323.cab
 │   ├── shimia32.efi                    (32Bit SHIM binary to be signed)
 │   ├── shimia32.efi.sha256sum          (shimia32.efi sha256sum)
 │   ├── shimx64.efi                     (64Bit SHIM binary to be signed)

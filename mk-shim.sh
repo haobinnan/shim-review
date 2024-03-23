@@ -117,7 +117,7 @@ function build()
     make clean
 
     #sbat.csv
-    echo 'shim.isoo,1,Isoo,shim,'${AtomLinux_ShimVNumber}',https://www.isoo.com/' > ./data/sbat.isoo.csv
+    echo 'shim.isoo,1,Isoo,shim,'${AtomLinux_ShimVNumber}',mail:haobinnan@gmail.com' > ./data/sbat.isoo.csv
     #sbat.csv
 
     if [ $UseExistingCertificate = "yes" ]; then
