@@ -13,7 +13,7 @@ Provide the information, which can prove the genuineness with certainty.
 Company/tax register entries or equivalent:  
 (a link to the organization entry in your jurisdiction's register will do)  
 
-https://aiqicha.baidu.com/company_detail_50023219413403
+- https://aiqicha.baidu.com/company_detail_50023219413403
 
 The public details of both your organization and the issuer in the EV certificate used for signing .cab files at Microsoft Hardware Dev Center File Signing Services.  
 (**not** the CA certificate embedded in your shim binary)
@@ -25,8 +25,8 @@ Issuer: O=MyIssuer, Ltd., CN=MyIssuer EV Code Signing CA
 Subject: C=XX, O=MyCompany, Inc., CN=MyCompany, Inc.
 ```
 
-Issuer: C = US, O = "DigiCert, Inc.", CN = DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
-Subject: jurisdictionC = CN, jurisdictionST = \E6\B2\B3\E5\8C\97\E7\9C\81, jurisdictionL = \E7\A7\A6\E7\9A\87\E5\B2\9B\E7\BB\8F\E6\B5\8E\E6\8A\80\E6\9C\AF\E5\BC\80\E5\8F\91\E5\8C\BA, businessCategory = Private Organization, serialNumber = 91130302MA09JH3X4Y, C = CN, ST = \E6\B2\B3\E5\8C\97\E7\9C\81, L = \E7\A7\A6\E7\9A\87\E5\B2\9B\E5\B8\82, O = "Qinhuangdao Yizhishu Software Development Co., Ltd.", CN = "Qinhuangdao Yizhishu Software Development Co., Ltd."
+- Issuer: C = US, O = "DigiCert, Inc.", CN = DigiCert Trusted G4 Code Signing RSA4096 SHA384 2021 CA1
+- Subject: jurisdictionC = CN, jurisdictionST = \E6\B2\B3\E5\8C\97\E7\9C\81, jurisdictionL = \E7\A7\A6\E7\9A\87\E5\B2\9B\E7\BB\8F\E6\B5\8E\E6\8A\80\E6\9C\AF\E5\BC\80\E5\8F\91\E5\8C\BA, businessCategory = Private Organization, serialNumber = 91130302MA09JH3X4Y, C = CN, ST = \E6\B2\B3\E5\8C\97\E7\9C\81, L = \E7\A7\A6\E7\9A\87\E5\B2\9B\E5\B8\82, O = "Qinhuangdao Yizhishu Software Development Co., Ltd.", CN = "Qinhuangdao Yizhishu Software Development Co., Ltd."
 
 *******************************************************************************
 ### What product or service is this for?
@@ -91,6 +91,7 @@ Make sure that you've verified that your build process uses that file as a sourc
 
 A short guide on verifying public keys and signatures should be available in the [docs](./docs/) directory.
 *******************************************************************************
+- https://github.com/rhboot/shim/releases/download/16.0/shim-16.0.tar.bz2
 - This is the unmodified shim-16.0 release.
 
 *******************************************************************************
