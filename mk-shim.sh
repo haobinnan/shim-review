@@ -7,7 +7,7 @@ fi
 
 Make="make -j$(cat /proc/cpuinfo | grep "cpu cores" | wc -l)"
 
-AtomLinux_ShimVNumber="15.8"
+AtomLinux_ShimVNumber="16.0"
 AtomLinux_DownloadURL="https://github.com/rhboot/shim.git"
 
 #Use Existing Certificate  (yes | no)
