@@ -120,7 +120,7 @@ See https://techcommunity.microsoft.com/t5/hardware-dev-center/nx-exception-for-
 Skip this, if you're not using GRUB2.
 *******************************************************************************
 - Downstream RHEL/Fedora/Debian/Canonical-like implementation
-- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.12-5ubuntu7
+- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.12-5ubuntu9
 
 *******************************************************************************
 ### Do you have fixes for all the following GRUB2 CVEs applied?
@@ -170,7 +170,7 @@ Skip this, if you're not using GRUB2.
 *******************************************************************************
 ### If shim is loading GRUB2 bootloader, and if these fixes have been applied, is the upstream global SBAT generation in your GRUB2 binary set to 4?
 Skip this, if you're not using GRUB2, otherwise do you have an entry in your GRUB2 binary similar to:  
-`grub,4,Free Software Foundation,grub,GRUB_UPSTREAM_VERSION,https://www.gnu.org/software/grub/`?
+`grub,5,Free Software Foundation,grub,GRUB_UPSTREAM_VERSION,https://www.gnu.org/software/grub/`?
 *******************************************************************************
 - Yes
 
@@ -297,9 +297,9 @@ Hint: run `objcopy --only-section .sbat -O binary YOUR_EFI_BINARY /dev/stdout` t
 - SBAT for grub2:
 
 > sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md  
-> grub,4,Free Software Foundation,grub,2.12,https://www.gnu.org/software/grub/  
-> grub.ubuntu,2,Ubuntu,grub2,2.12-5ubuntu7,https://www.ubuntu.com/  
-> grub.peimage,2,Canonical,grub2,2.12-5ubuntu7,https://salsa.debian.org/grub-team/grub/-/blob/master/debian/patches/secure-boot/efi-use-peimage-shim.patch  
+> grub,5,Free Software Foundation,grub,2.12,https://www.gnu.org/software/grub/  
+> grub.ubuntu,2,Ubuntu,grub2,2.12-5ubuntu9,https://www.ubuntu.com/  
+> grub.peimage,2,Canonical,grub2,2.12-5ubuntu9,https://salsa.debian.org/grub-team/grub/-/blob/master/debian/patches/secure-boot/efi-use-peimage-shim.patch  
 > grub.isoo,2,Isoo,grub2,2.12-isoo,mail:haobinnan@gmail.com  
 
 *******************************************************************************
@@ -318,8 +318,8 @@ Hint: this is about those modules that are in the binary itself, not the `.mod` 
 *******************************************************************************
 ### What is the origin and full version number of your bootloader (GRUB2 or systemd-boot or other)?
 *******************************************************************************
-- GRUB2 version: 2.12-5ubuntu7
-- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.12-5ubuntu7
+- GRUB2 version: 2.12-5ubuntu9
+- https://git.launchpad.net/ubuntu/+source/grub2/tag/?h=import/2.12-5ubuntu9
 - No extra patches
 
 *******************************************************************************
